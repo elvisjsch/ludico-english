@@ -18,7 +18,9 @@ document.addEventListener('DOMContentLoaded', () => {
         contIncorrect: document.getElementById("contIncorrect"),
         correctBtn: document.getElementById("correctBtn"),
         wrongBtn: document.getElementById("wrongBtn"),
-        checkMode: document.getElementById("checkMode")
+        checkMode: document.getElementById("checkMode"),
+        contenerCategory: document.getElementById('contenerButtonCategory'),
+        radios: document.querySelectorAll('input[name="opcion"]')
     };
 
     // 2. Evento: Iniciar Juego
@@ -55,12 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
     categoryButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const category = e.currentTarget.dataset.category;
-            
+
             // Actualizar Estilos Visuales
             updateCategoryStyles(categoryButtons, e.currentTarget);
-            
+
             // Llamar a la lógica de cambio
             logica.changeCategory(category, elements);
+        });
+    });
+
+    // 8. Eventos: Seleccionamos todos los radio buttons con el nombre "opcion"
+    const radios = document.querySelectorAll('input[name="opcion"]');
+    radios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.checked) {
+                logica.changeMode(elements);
+                // Aquí puedes disparar tu lógica
+            }
         });
     });
 });
@@ -71,9 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateCategoryStyles(allButtons, activeBtn) {
     allButtons.forEach(btn => {
         btn.classList.remove('bg-[#46608B]', 'text-white');
-        btn.classList.add('bg-gray-200', 'text-gray-600');
+        btn.classList.add('bg-gray-200', 'text-gray-600','hover:bg-gray-300','transition-all', 'active:scale-95');
     });
 
-    activeBtn.classList.remove('bg-gray-200', 'text-gray-600');
+    activeBtn.classList.remove('bg-gray-200', 'text-gray-600','hover:bg-gray-300', 'transition-all', 'active:scale-95');
     activeBtn.classList.add('bg-[#46608B]', 'text-white');
 }
+

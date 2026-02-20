@@ -32,6 +32,41 @@
             <div id="contener-play"
                 class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 flex flex-col items-center text-center">
 
+
+                <div class="flex flex-col gap-4 p-6">
+                    <div class="flex items-center gap-6">
+                        <label class="flex items-center cursor-pointer group">
+                            <div class="relative">
+                                <input type="radio" name="opcion" class="sr-only peer" value="es" checked>
+                                <div
+                                    class="w-6 h-6 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 transition-all">
+                                </div>
+                                <div
+                                    class="absolute inset-1 w-4 h-4 bg-blue-500 rounded-full scale-0 peer-checked:scale-100 transition-all">
+                                </div>
+                            </div>
+                            <span class="ml-3 text-gray-700 group-hover:text-blue-600 transition-colors">
+                                Español
+                            </span>
+                        </label>
+
+                        <label class="flex items-center cursor-pointer group">
+                            <div class="relative">
+                                <input type="radio" name="opcion" class="sr-only peer" value="en">
+                                <div
+                                    class="w-6 h-6 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 transition-all">
+                                </div>
+                                <div
+                                    class="absolute inset-1 w-4 h-4 bg-blue-500 rounded-full scale-0 peer-checked:scale-100 transition-all">
+                                </div>
+                            </div>
+                            <span class="ml-3 text-gray-700 group-hover:text-blue-600 transition-colors">
+                                Ingles
+                            </span>
+                        </label>
+                    </div>
+                </div>
+
                 <div class="bg-indigo-100 p-4 rounded-full mb-4">
                     <span class="text-4xl">🎮</span>
                 </div>
@@ -92,7 +127,7 @@
                     class="flex overflow-x-auto flex-nowrap items-center py-5 px-2 gap-2 w-full mt-4">
 
                     <button id="btnReg" name="regulares" data-category="reg"
-                        class="category-btn flex-shrink-0 text-sm bg-[#46608B] text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all">
+                        class="category-btn flex-shrink-0 text-sm bg-[#46608B] text-white font-bold py-3 px-6 rounded-xl shadow-lg">
                         Regulares
                     </button>
 

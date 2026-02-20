@@ -54,67 +54,157 @@ export const words = [
 ];
 
 export const wordsRegular = [
-  { english: "Arise", pron: "/arais/", spanish: "surgir / levantarse" },
-  { english: "Bear", pron: "/verr/", spanish: "soportar / dar a luz" },
-  { english: "Beat", pron: "/bit/", spanish: "golpear / vencer" },
-  { english: "Become", pron: "/bicom/", spanish: "convertirse / volverse" },
-  { english: "Begin", pron: "/begin/", spanish: "comenzar / empezar" },
-  { english: "Bite", pron: "/bait/", spanish: "morder" },
-  { english: "Bleed", pron: "/blid/", spanish: "sangrar" },
-  { english: "Blow", pron: "/blou/", spanish: "soplar" },
-  { english: "Break", pron: "/breik/", spanish: "romper" },
-  { english: "Breed", pron: "/brid/", spanish: "criar" },
-  { english: "Bring", pron: "/bring/", spanish: "traer" },
-  { english: "Build", pron: "/bild/", spanish: "construir" },
-  { english: "Burn", pron: "/bern/", spanish: "quemar" },
-  { english: "Buy", pron: "/bai/", spanish: "comprar" },
-  { english: "Catch", pron: "/kech / cach/", spanish: "atrapar / coger" },
-  { english: "Can", pron: "/ken/", spanish: "poder" },
-  { english: "Choose", pron: "/shus/", spanish: "elegir" },
-  { english: "Creep", pron: "/crip/", spanish: "arrastrarse" },
-  { english: "Cling", pron: "/cling/", spanish: "aferrarse" },
-  { english: "Come", pron: "/com/", spanish: "venir" },
-  { english: "Cost", pron: "/cost/", spanish: "costar" },
-  { english: "Cut", pron: "/cat/", spanish: "cortar" },
-  { english: "Deal", pron: "/dil/", spanish: "trato / repartir / dar" },
-  { english: "Dig", pron: "/dig/", spanish: "cavar" },
-  { english: "Do", pron: "/du/", spanish: "hacer" },
-  { english: "Draw", pron: "/dra/", spanish: "dibujar" },
-  { english: "Dream", pron: "/drim/", spanish: "soñar" },
-  { english: "Drink", pron: "/drink/", spanish: "beber / tomar" },
-  { english: "Drive", pron: "/draiv/", spanish: "conducir" },
-  { english: "Eat", pron: "/it/", spanish: "comer" },
-  { english: "Fall", pron: "/fol/", spanish: "caer" },
-  { english: "Feed", pron: "/fid/", spanish: "alimentar" },
-  { english: "Feel", pron: "/fil/", spanish: "sentir" },
-  { english: "Fight", pron: "/fait/", spanish: "pelear / luchar" },
-  { english: "Find", pron: "/faind/", spanish: "encontrar" },
-  { english: "Fly", pron: "/flai/", spanish: "volar" },
-  { english: "Forbid", pron: "/forbid/", spanish: "prohibir" },
-  { english: "Forget", pron: "/forget/", spanish: "olvidar" },
-  { english: "Forgive", pron: "/forgiv/", spanish: "perdonar" },
-  { english: "Forsake", pron: "/forsek/", spanish: "abandonar" },
-  { english: "Hide", pron: "/jaid/", spanish: "esconder" },
-  { english: "Hit", pron: "/jit/", spanish: "golpear" },
-  { english: "Hold", pron: "/jold/", spanish: "sostener / aguantar" },
-  { english: "Hurt", pron: "/jert/", spanish: "herir" },
-  { english: "Keep", pron: "/kip/", spanish: "mantener / guardar" },
-  { english: "Know", pron: "/nou/", spanish: "saber / conocer" },
-  { english: "Lend", pron: "/lend/", spanish: "prestar" }
-//   { english: "Lie", pron: "/lai/", spanish: "mentir / tumbarse" },
-//   { english: "Mistake", pron: "/misteik/", spanish: "equivocarse" },
-//   { english: "Overcome", pron: "/overcom/", spanish: "superar" },
-//   { english: "Pay", pron: "/pei/", spanish: "pagar" },
-//   { english: "Quit", pron: "/kuit/", spanish: "dejar / abandonar" },
-//   { english: "Ride", pron: "/raid/", spanish: "montar / conducir" },
-//   { english: "Sew", pron: "/su/", spanish: "coser" },
-//   { english: "Spend", pron: "/spend/", spanish: "gastar / pasar (tiempo)" },
-//   { english: "Spread", pron: "/spred/", spanish: "extender / propagar" },
-//   { english: "Stand", pron: "/stend/", spanish: "pararse / soportar" },
-//   { english: "Tell", pron: "/tel/", spanish: "decir / contar" },
-//   { english: "Understand", pron: "/andersten/", spanish: "entender" },
-//   { english: "Wear", pron: "/uer/", spanish: "llevar puesto" }
+    { english: "Arise", pron: "/arais/", spanish: "surgir / levantarse" },
+    { english: "Bear", pron: "/verr/", spanish: "soportar / dar a luz" },
+    { english: "Beat", pron: "/bit/", spanish: "golpear / vencer" },
+    { english: "Become", pron: "/bicom/", spanish: "convertirse / volverse" },
+    { english: "Begin", pron: "/begin/", spanish: "comenzar / empezar" },
+    { english: "Bite", pron: "/bait/", spanish: "morder" },
+    { english: "Bleed", pron: "/blid/", spanish: "sangrar" },
+    { english: "Blow", pron: "/blou/", spanish: "soplar" },
+    { english: "Break", pron: "/breik/", spanish: "romper" },
+    { english: "Breed", pron: "/brid/", spanish: "criar" },
+    { english: "Bring", pron: "/bring/", spanish: "traer" },
+    { english: "Build", pron: "/bild/", spanish: "construir" },
+    { english: "Burn", pron: "/bern/", spanish: "quemar" },
+    { english: "Buy", pron: "/bai/", spanish: "comprar" },
+    { english: "Catch", pron: "/kech / cach/", spanish: "atrapar / coger" },
+    { english: "Can", pron: "/ken/", spanish: "poder" },
+    { english: "Choose", pron: "/shus/", spanish: "elegir" },
+    { english: "Creep", pron: "/crip/", spanish: "arrastrarse" },
+    { english: "Cling", pron: "/cling/", spanish: "aferrarse" },
+    { english: "Come", pron: "/com/", spanish: "venir" },
+    { english: "Cost", pron: "/cost/", spanish: "costar" },
+    { english: "Cut", pron: "/cat/", spanish: "cortar" },
+    { english: "Deal", pron: "/dil/", spanish: "trato / repartir / dar" },
+    { english: "Dig", pron: "/dig/", spanish: "cavar" },
+    { english: "Do", pron: "/du/", spanish: "hacer" },
+    { english: "Draw", pron: "/dra/", spanish: "dibujar" },
+    { english: "Dream", pron: "/drim/", spanish: "soñar" },
+    { english: "Drink", pron: "/drink/", spanish: "beber / tomar" },
+    { english: "Drive", pron: "/draiv/", spanish: "conducir" },
+    { english: "Eat", pron: "/it/", spanish: "comer" },
+    { english: "Fall", pron: "/fol/", spanish: "caer" },
+    { english: "Feed", pron: "/fid/", spanish: "alimentar" },
+    { english: "Feel", pron: "/fil/", spanish: "sentir" },
+    { english: "Fight", pron: "/fait/", spanish: "pelear / luchar" },
+    { english: "Find", pron: "/faind/", spanish: "encontrar" },
+    { english: "Fly", pron: "/flai/", spanish: "volar" },
+    { english: "Forbid", pron: "/forbid/", spanish: "prohibir" },
+    { english: "Forget", pron: "/forget/", spanish: "olvidar" },
+    { english: "Forgive", pron: "/forgiv/", spanish: "perdonar" },
+    { english: "Forsake", pron: "/forsek/", spanish: "abandonar" },
+    { english: "Hide", pron: "/jaid/", spanish: "esconder" },
+    { english: "Hit", pron: "/jit/", spanish: "golpear" },
+    { english: "Hold", pron: "/jold/", spanish: "sostener / aguantar" },
+    { english: "Hurt", pron: "/jert/", spanish: "herir" },
+    { english: "Keep", pron: "/kip/", spanish: "mantener / guardar" },
+    { english: "Know", pron: "/nou/", spanish: "saber / conocer" },
+    { english: "Lend", pron: "/lend/", spanish: "prestar" }
+    //   { english: "Lie", pron: "/lai/", spanish: "mentir / tumbarse" },
+    //   { english: "Mistake", pron: "/misteik/", spanish: "equivocarse" },
+    //   { english: "Overcome", pron: "/overcom/", spanish: "superar" },
+    //   { english: "Pay", pron: "/pei/", spanish: "pagar" },
+    //   { english: "Quit", pron: "/kuit/", spanish: "dejar / abandonar" },
+    //   { english: "Ride", pron: "/raid/", spanish: "montar / conducir" },
+    //   { english: "Sew", pron: "/su/", spanish: "coser" },
+    //   { english: "Spend", pron: "/spend/", spanish: "gastar / pasar (tiempo)" },
+    //   { english: "Spread", pron: "/spred/", spanish: "extender / propagar" },
+    //   { english: "Stand", pron: "/stend/", spanish: "pararse / soportar" },
+    //   { english: "Tell", pron: "/tel/", spanish: "decir / contar" },
+    //   { english: "Understand", pron: "/andersten/", spanish: "entender" },
+    //   { english: "Wear", pron: "/uer/", spanish: "llevar puesto" }
 ];
+
+export const transitionWords = [
+  { english: "In fact", pron: "In fact", spanish: "De hecho" },
+  { english: "In general", pron: "In yeneral", spanish: "En general" },
+  { english: "Besides", pron: "Bisais", spanish: "Ademas" },
+  { english: "By the way", pron: "Bai da uei", spanish: "Cambiando el tema" },
+  { english: "So", pron: "So", spanish: "Y, entonces" },
+  { english: "Although", pron: "Aldou", spanish: "Aunque" },
+  { english: "Then", pron: "Den", spanish: "Entonces" },
+  { english: "So then", pron: "So den", spanish: "Y entonces" },
+  { english: "Therefore", pron: "Derfor", spanish: "Por eso" },
+  { english: "That's right", pron: "Dats rait", spanish: "Por eso" },
+  { english: "However", pron: "Jauever", spanish: "Sin embargo" },
+  { english: "At least", pron: "At list", spanish: "Por lo menos" },
+  { english: "In other words", pron: "Inoder uords", spanish: "En otras palabras" },
+  { english: "Little by little", pron: "Lirol bai Lirol", spanish: "Poco a poco" },
+  { english: "Step by step", pron: "Step bai step", spanish: "Paso a Paso" },
+  { english: "For example", pron: "Forexsampol", spanish: "Por ejemplo" },
+  { english: "According to", pron: "Acordin tu", spanish: "Según" },
+  { english: "Without a doubt", pron: "Uidaradaut", spanish: "Sin duda" },
+  { english: "Hands down", pron: "Jen daun", spanish: "Sin duda" },
+  { english: "Unless", pron: "Anles", spanish: "A menos que" },
+  { english: "Somehow", pron: "Som jau", spanish: "De alguna manera" },
+//   { english: "I agree", pron: "Ai agri", spanish: "Estoy de acuerdo" },
+//   { english: "Kidding", pron: "Kirin", spanish: "Bromeando" },
+//   { english: "I know what you mean", pron: "Ai nou uat iu min", spanish: "Se a lo que te refieres" },
+//   { english: "On second thought", pron: "On second zot", spanish: "Pensándolo mejor" },
+//   { english: "Afford", pron: "Aford", spanish: "Costear" },
+//   { english: "By any chance", pron: "Bai eni chens", spanish: "Por casualidad" },
+//   { english: "In the meantime", pron: "In da min taim", spanish: "Mientras tanto" },
+//   { english: "Meanwhile", pron: "Min uail", spanish: "Mientras tanto" },
+//   { english: "While", pron: "Uail", spanish: "Mientras" },
+//   { english: "Instead", pron: "Insted", spanish: "En vez de" },
+//   { english: "Instead of", pron: "Insterof", spanish: "En vez de" },
+//   { english: "On you", pron: "On iu", spanish: "Tu pagas" },
+//   { english: "Let me get this straight", pron: "Let mi get distreit", spanish: "Dejame ver si entiendo" },
+//   { english: "It's a good thing", pron: "Itsa gud zin", spanish: "Menos mal" },
+//   { english: "Changed my mind", pron: "Chench mai maind", spanish: "Cambie de idea" },
+//   { english: "What I'd give to", pron: "Uarai giv tu", spanish: "Lo que daria por" },
+//   { english: "Allow me", pron: "Alou mi", spanish: "Permiteme" },
+//   { english: "I'm afraid yes", pron: "Aimafreid ies", spanish: "Me temo que si" },
+//   { english: "I'm afraid not", pron: "Aimafreid nat", spanish: "Me temo que no" },
+//   { english: "I'm afraid", pron: "Aimafreid", spanish: "Me temo" },
+//   { english: "Among", pron: "Among", spanish: "Entre" },
+//   { english: "Between", pron: "Bituin", spanish: "Entre" },
+//   { english: "Odds", pron: "Ods", spanish: "Probabilidades" },
+//   { english: "Toward", pron: "Touard", spanish: "Hacia" },
+//   { english: "Despite", pron: "Dispait", spanish: "A pesar de" },
+//   { english: "Due to", pron: "Du tu", spanish: "Debido a" },
+//   { english: "Nevertheless", pron: "Never da les", spanish: "No obstante" },
+//   { english: "On other hand", pron: "On other jend", spanish: "Por otra parte" },
+//   { english: "Otherwise", pron: "Oder uais", spanish: "Por otra parte" },
+//   { english: "Speechless", pron: "Spichles", spanish: "Sin palabras" },
+//   { english: "Yet again", pron: "iet Aguen", spanish: "Una vez más" },
+//   { english: "For good", pron: "For gud", spanish: "Por si acaso / Para siempre" },
+//   { english: "It takes me", pron: "It teiks mi", spanish: "Esto me lleva" },
+//   { english: "Fortunately", pron: "Forchenli", spanish: "Afortunadamente" },
+//   { english: "Happily", pron: "Japli", spanish: "Afortunadamente felizmente" },
+//   { english: "Unfortunately", pron: "Anforchenli", spanish: "Desafortunadamente" },
+//   { english: "Sadly", pron: "Sadli", spanish: "Desafortunadamente / Desgraciadamente / Tristemente" },
+//   { english: "Obviously", pron: "Obiusli", spanish: "Obviamente" },
+//   { english: "Undoubtedly", pron: "Andaurebli", spanish: "Indudablemente" },
+//   { english: "Surely", pron: "Shurli", spanish: "Seguramente" },
+//   { english: "Indeed", pron: "Indid", spanish: "Verdaderamente / En efecto / En realidad" },
+//   { english: "Apparently", pron: "Aperenli", spanish: "Aparentemente / Al parecer" },
+//   { english: "Possibly", pron: "Posibli", spanish: "Posiblemente" },
+//   { english: "Currently", pron: "Kurrentli", spanish: "Actualmente" },
+//   { english: "Actually", pron: "Acshuli", spanish: "Realmente / De hecho" },
+//   { english: "Mostly", pron: "Moszli", spanish: "Prácticamente / Normalmente" },
+//   { english: "Practicaly", pron: "Practicli", spanish: "Prácticamente" },
+//   { english: "All in all", pron: "Olin ol", spanish: "Después de todo / En definitiva" },
+//   { english: "To sum up", pron: "Tu samap", spanish: "En resumen / para resumir" },
+//   { english: "Eventually", pron: "Evenshuali", spanish: "Eventualmente" },
+//   { english: "Now a day", pron: "Nauadei", spanish: "Hoy en día" },
+//   { english: "Last but not least", pron: "Last bat nat list", spanish: "Por último pero no menos importante" },
+//   { english: "From now on", pron: "From nauon", spanish: "De ahora en adelante" },
+//   { english: "Once in a while", pron: "Uansinauail", spanish: "De vez en cuando" },
+//   { english: "That's why", pron: "Dats uay", spanish: "Por eso" },
+//   { english: "Just in case", pron: "Yost in keis", spanish: "Por si acaso" },
+//   { english: "In spite of", pron: "In spairof", spanish: "A pesar de" },
+//   { english: "That being said", pron: "Dat bin sed", spanish: "Dicho esto" },
+//   { english: "Uncalled for", pron: "Ancaled for", spanish: "Fuera de lugar" },
+//   { english: "By all means", pron: "Bai ol mins", spanish: "Sin duda" },
+//   { english: "By no means", pron: "Bai no mins", spanish: "De ninguna manera" },
+//   { english: "From what I see", pron: "From uarai si", spanish: "Por lo que veo" }
+];
+
+export const conectivos = [
+    { english: "And", pron: "/and/", spanish: "y" }
+]
 
 // 2. Estado del Juego
 export let state = {
@@ -140,8 +230,16 @@ export function loadQuestion(elements) {
 
     state.randomIndex = Math.floor(Math.random() * state.wordsCopy.length);
     state.currentWord = state.wordsCopy[state.randomIndex];
-    
-    elements.areaText.textContent = `¿Cómo se dice "${state.currentWord.english}"?`;
+
+    elements.radios.forEach(element => {
+        if (element.value === "es" && element.checked) {
+            elements.areaText.textContent = `¿Cómo se dice "${state.currentWord.spanish}"?`;
+        } else if (element.value === "en" & element.checked) {
+            elements.areaText.textContent = `¿Que segnifica "${state.currentWord.english}" en ingles?`;
+        }
+    });
+
+
     elements.areaEnser.classList.add('hidden');
     elements.areaTest.classList.add('hidden');
     elements.btnNext.classList.add('hidden');
@@ -152,12 +250,28 @@ export function starGame(elements) {
     if (state.start === 0) {
         state.start = 1;
         elements.btnBegin.classList.add('hidden');
+        elements.contenerCategory.classList.add('hidden');
         loadQuestion(elements);
     }
 }
 
+function obtenerResultado() {
+    const seleccionado = document.querySelector('input[name="opcion"]:checked');
+
+    if (seleccionado) {
+        alert("Seleccionaste: " + seleccionado.value);
+    }
+}
+
 export function showAnswer(elements) {
-    elements.translation.textContent = state.currentWord.spanish;
+
+    elements.radios.forEach(element => {
+        if (element.value === "es" && element.checked) {
+            elements.translation.textContent = state.currentWord.english;
+        } else if (element.value === "en" & element.checked) {
+            elements.translation.textContent = state.currentWord.spanish;
+        }
+    });
     elements.pronunciation.textContent = state.currentWord.pron;
     elements.areaEnser.classList.remove('hidden');
     elements.btnShow.classList.add('hidden');
@@ -199,7 +313,9 @@ export function changeCategory(cat, elements) {
     // 1. Filtrar lista
     if (cat === 'reg') state.wordsCopy = [...words];
     else if (cat === 'irreg') state.wordsCopy = [...wordsRegular];
-    else state.wordsCopy = [...words, ...wordsRegular];
+    else if (cat === 'ambos') state.wordsCopy = [...wordsRegular,...words];
+    else if (cat === 'conect') state.wordsCopy = [...conectivos];
+    
 
     // 2. Resetear estadísticas visuales y de estado
     state.good = 0;
@@ -207,7 +323,7 @@ export function changeCategory(cat, elements) {
     elements.contCorrect.textContent = `✓ Correctas: 0`;
     elements.contIncorrect.textContent = `✕ Incorrectas: 0`;
     elements.statsTableBody.innerHTML = '';
-    
+
     // 3. Reiniciar interfaz
     state.start = 0;
     elements.btnBegin.classList.remove('hidden');
