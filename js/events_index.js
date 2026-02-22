@@ -1,5 +1,5 @@
 // events.js
-import * as logica from './logica.js';
+import * as logica from './logica_index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
     // 1. Mapeo de elementos del DOM
