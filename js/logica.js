@@ -131,18 +131,18 @@ export const wordsRegular = [
     { english: "Know", pron: "/nou/", spanish: "saber / conocer" },
     { english: "Lend", pron: "/lend/", spanish: "prestar" },
     //   { english: "Lie", pron: "/lai/", spanish: "mentir / tumbarse" },
-      { english: "Mistake", pron: "/misteik/", spanish: "equivocarse" },
+    { english: "Mistake", pron: "/misteik/", spanish: "equivocarse" },
     //   { english: "Overcome", pron: "/overcom/", spanish: "superar" },
-      { english: "Pay", pron: "/pei/", spanish: "pagar" },
-      { english: "Quit", pron: "/kuit/", spanish: "dejar / abandonar" },
-      { english: "Ride", pron: "/raid/", spanish: "montar / conducir" },
-      { english: "Sew", pron: "/su/", spanish: "coser" },
-      { english: "Spend", pron: "/spend/", spanish: "gastar / pasar (tiempo)" },
+    { english: "Pay", pron: "/pei/", spanish: "pagar" },
+    { english: "Quit", pron: "/kuit/", spanish: "dejar / abandonar" },
+    { english: "Ride", pron: "/raid/", spanish: "montar / conducir" },
+    { english: "Sew", pron: "/su/", spanish: "coser" },
+    { english: "Spend", pron: "/spend/", spanish: "gastar / pasar (tiempo)" },
     //   { english: "Spread", pron: "/spred/", spanish: "extender / propagar" },
-      { english: "Stand", pron: "/stend/", spanish: "pararse / soportar" },
-      { english: "Tell", pron: "/tel/", spanish: "decir / contar" },
-      { english: "Understand", pron: "/andersten/", spanish: "entender" },
-      { english: "Wear", pron: "/uer/", spanish: "llevar puesto" }
+    { english: "Stand", pron: "/stend/", spanish: "pararse / soportar" },
+    { english: "Tell", pron: "/tel/", spanish: "decir / contar" },
+    { english: "Understand", pron: "/andersten/", spanish: "entender" },
+    { english: "Wear", pron: "/uer/", spanish: "llevar puesto" }
 ];
 
 export const conectivos = [
@@ -167,17 +167,17 @@ export const conectivos = [
     { english: "Hands down", pron: "Jen daun", spanish: "Sin duda" },
     { english: "Unless", pron: "Anles", spanish: "A menos que" },
     { english: "Somehow", pron: "Som jau", spanish: "De alguna manera" },
-      { english: "I agree", pron: "Ai agri", spanish: "Estoy de acuerdo" },
-      { english: "Kidding", pron: "Kirin", spanish: "Bromeando" },
-      { english: "I know what you mean", pron: "Ai nou uat iu min", spanish: "Se a lo que te refieres" },
-      { english: "On second thought", pron: "On second zot", spanish: "Pensándolo mejor" },
-      { english: "Afford", pron: "Aford", spanish: "Costear" },
-      { english: "By any chance", pron: "Bai eni chens", spanish: "Por casualidad" },
-      { english: "In the meantime", pron: "In da min taim", spanish: "Mientras tanto" },
-      { english: "Meanwhile", pron: "Min uail", spanish: "Mientras tanto" },
-      { english: "While", pron: "Uail", spanish: "Mientras" },
-      { english: "Instead", pron: "Insted", spanish: "En vez de" },
-      { english: "Instead of", pron: "Insterof", spanish: "En vez de" },
+    { english: "I agree", pron: "Ai agri", spanish: "Estoy de acuerdo" },
+    { english: "Kidding", pron: "Kirin", spanish: "Bromeando" },
+    { english: "I know what you mean", pron: "Ai nou uat iu min", spanish: "Se a lo que te refieres" },
+    { english: "On second thought", pron: "On second zot", spanish: "Pensándolo mejor" },
+    { english: "Afford", pron: "Aford", spanish: "Costear" },
+    { english: "By any chance", pron: "Bai eni chens", spanish: "Por casualidad" },
+    { english: "In the meantime", pron: "In da min taim", spanish: "Mientras tanto" },
+    { english: "Meanwhile", pron: "Min uail", spanish: "Mientras tanto" },
+    { english: "While", pron: "Uail", spanish: "Mientras" },
+    { english: "Instead", pron: "Insted", spanish: "En vez de" },
+    { english: "Instead of", pron: "Insterof", spanish: "En vez de" },
     //   { english: "On you", pron: "On iu", spanish: "Tu pagas" },
     //   { english: "Let me get this straight", pron: "Let mi get distreit", spanish: "Dejame ver si entiendo" },
     //   { english: "It's a good thing", pron: "Itsa gud zin", spanish: "Menos mal" },
@@ -228,7 +228,7 @@ export const conectivos = [
     //   { english: "Uncalled for", pron: "Ancaled for", spanish: "Fuera de lugar" },
     //   { english: "By all means", pron: "Bai ol mins", spanish: "Sin duda" },
     //   { english: "By no means", pron: "Bai no mins", spanish: "De ninguna manera" },
-      { english: "From what I see", pron: "From uarai si", spanish: "Por lo que veo" }
+    { english: "From what I see", pron: "From uarai si", spanish: "Por lo que veo" }
 ];
 
 // 2. Estado del Juego
@@ -324,8 +324,17 @@ export function recordResult(isCorrect, elements) {
     const row = document.createElement('tr');
     row.className = "hover:bg-gray-50 transition-colors";
     row.innerHTML = `
-        <td class="px-4 py-2 font-medium text-indigo-600">${state.currentWord.english}</td>
-        <td class="px-4 py-2 text-center">${isCorrect ? '✓' : '✕'}</td>
+            <td class="px-4 py-2 font-medium text-indigo-600">
+                <details class="cursor-pointer">
+                    <summary class="list-none outline-none">${state.currentWord.english}</summary>
+                    <div class="mt-2 text-sm text-gray-500 italic">
+                        Traducción: ${state.currentWord.spanish} (${state.currentWord.pron})
+                    </div>
+                </details>
+            </td>
+            <td class="px-4 py-2 text-center text-xl font-bold ${isCorrect ? 'text-green-500' : 'text-red-500'}">
+            ${isCorrect ? '✓' : '✕'}
+            </td>
     `;
     elements.statsTableBody.prepend(row);
 

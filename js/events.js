@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         radio.addEventListener('change', (e) => {
             if (e.target.checked) {
                 logica.changeMode(elements);
-                // Aquí puedes disparar tu lógica
             }
         });
     });
