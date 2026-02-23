@@ -1,8 +1,9 @@
-// events.js
+// events_index.js
 import * as logica from './logica_index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mapeo de elementos del DOM
+    
+    // 1. Mapeo centralizado de elementos del DOM
     const elements = {
         btnBegin: document.getElementById("btnBegin"),
         btnShow: document.getElementById("btnShow"),
@@ -23,22 +24,21 @@ document.addEventListener('DOMContentLoaded', () => {
         radios: document.querySelectorAll('input[name="opcion"]')
     };
 
-    // 2. Evento: Iniciar Juego
+    // 2. Inicialización de Juego
     elements.btnBegin.addEventListener("click", () => {
         logica.starGame(elements);
     });
 
-    // 3. Evento: Mostrar Respuesta
+    // 3. Control de Respuesta y Navegación
     elements.btnShow.addEventListener("click", () => {
         logica.showAnswer(elements);
     });
 
-    // 4. Evento: Siguiente Palabra (Modo no evaluación)
     elements.btnNext.addEventListener("click", () => {
         logica.loadQuestion(elements);
     });
 
-    // 5. Eventos: Evaluación (Bien / Mal)
+    // 4. Sistema de Evaluación (Feedback del usuario)
     elements.correctBtn.addEventListener("click", () => {
         logica.recordResult(true, elements);
     });
@@ -47,46 +47,47 @@ document.addEventListener('DOMContentLoaded', () => {
         logica.recordResult(false, elements);
     });
 
-    // 6. Evento: Reiniciar (Recargar página)
-    elements.btnReset.addEventListener("click", () => {
-        location.reload();
-    });
-
-    // 7. Eventos: Cambio de Categoría
+    // 5. Gestión de Categorías
     const categoryButtons = document.querySelectorAll('.category-btn');
+    
     categoryButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const category = e.currentTarget.dataset.category;
-
-            // Actualizar Estilos Visuales
+            
+            // Actualizar UI de botones
             updateCategoryStyles(categoryButtons, e.currentTarget);
-
-            // Llamar a la lógica de cambio
+            
+            // Cambiar lógica de datos
             logica.changeCategory(category, elements);
         });
     });
 
-    // 8. Eventos: Seleccionamos todos los radio buttons con el nombre "opcion"
-    const radios = document.querySelectorAll('input[name="opcion"]');
-    radios.forEach(radio => {
-        radio.addEventListener('change', (e) => {
-            if (e.target.checked) {
-                logica.changeMode(elements);
-            }
+    // 6. Configuración de Idioma (Español <-> Inglés)
+    elements.radios.forEach(radio => {
+        radio.addEventListener('change', () => {
+            logica.changeMode(elements);
         });
+    });
+
+    // 7. Reiniciar Juego
+    elements.btnReset.addEventListener("click", () => {
+        // Podrías usar location.reload() o llamar a changeCategory con la actual
+        location.reload();
     });
 });
 
 /**
- * Función auxiliar para gestionar la apariencia de los botones de categoría
+ * Gestiona visualmente qué categoría está seleccionada
  */
 function updateCategoryStyles(allButtons, activeBtn) {
+    const activeClasses = ['bg-[#46608B]', 'text-white', 'shadow-md'];
+    const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300'];
+
     allButtons.forEach(btn => {
-        btn.classList.remove('bg-[#46608B]', 'text-white');
-        btn.classList.add('bg-gray-200', 'text-gray-600','hover:bg-gray-300','transition-all', 'active:scale-95');
+        btn.classList.remove(...activeClasses);
+        btn.classList.add(...inactiveClasses);
     });
 
-    activeBtn.classList.remove('bg-gray-200', 'text-gray-600','hover:bg-gray-300', 'transition-all', 'active:scale-95');
-    activeBtn.classList.add('bg-[#46608B]', 'text-white');
+    activeBtn.classList.remove(...inactiveClasses);
+    activeBtn.classList.add(...activeClasses);
 }
-

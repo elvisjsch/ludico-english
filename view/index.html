@@ -4,191 +4,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Learning App</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
 </head>
 
-<body class="bg-gray-100 min-h-screen flex flex-col font-sans">
+<body class="bg-slate-50 min-h-screen flex flex-col text-slate-900">
 
-    <header class="bg-white py-6 border-b border-gray-200">
-        <h1 class="text-4xl font-extrabold text-center text-indigo-600 tracking-tight uppercase">
+    <header class="bg-white py-8 border-b border-slate-200 shadow-sm">
+        <h1 class="text-4xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 tracking-tight uppercase">
             Página de Inglés
         </h1>
     </header>
 
-    <nav class="bg-indigo-700 shadow-md sticky top-0 z-50">
+    <nav class="bg-indigo-600 shadow-lg sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4">
-            <div class="flex justify-center space-x-6 py-3">
-                <a href="/view/index.html" class="text-white hover:text-indigo-200 font-medium transition-colors">Principal</a>
-                <a href="/view/verbos.html" class="text-white hover:text-indigo-200 font-medium transition-colors">Verbos</a>
-                <a href="#" class="text-white hover:text-indigo-200 font-medium transition-colors">Preguntas</a>
-                <a href="#" class="text-white hover:text-indigo-200 font-medium transition-colors">Futuro</a>
+            <div class="flex justify-center space-x-8 py-4">
+                <a href="/view/index.html" class="text-indigo-100 hover:text-white font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Principal</a>
+                <a href="/view/verbos.html" class="text-indigo-100 hover:text-white font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Verbos</a>
+                <a href="#" class="text-indigo-100 hover:text-white font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Preguntas</a>
+                <a href="#" class="text-indigo-100 hover:text-white font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Futuro</a>
             </div>
         </div>
     </nav>
 
-    <main class="flex-col flex items-center justify-center p-6">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-5xl">
+    <main class="flex-grow flex items-center justify-center p-4 md:p-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 w-full max-w-6xl">
 
-            <div id="contener-play"
-                class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 flex flex-col items-center text-center">
-
-
-                <div class="flex flex-col gap-4 p-6">
-                    <div class="flex items-center gap-6">
-                        <label class="flex items-center cursor-pointer group">
-                            <div class="relative">
-                                <input type="radio" name="opcion" class="sr-only peer" value="es" checked>
-                                <div
-                                    class="w-6 h-6 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 transition-all">
-                                </div>
-                                <div
-                                    class="absolute inset-1 w-4 h-4 bg-blue-500 rounded-full scale-0 peer-checked:scale-100 transition-all">
-                                </div>
-                            </div>
-                            <span class="ml-3 text-gray-700 group-hover:text-blue-600 transition-colors">
-                                Español
-                            </span>
-                        </label>
-
-                        <label class="flex items-center cursor-pointer group">
-                            <div class="relative">
-                                <input type="radio" name="opcion" class="sr-only peer" value="en">
-                                <div
-                                    class="w-6 h-6 border-2 border-gray-300 rounded-full peer-checked:border-blue-500 transition-all">
-                                </div>
-                                <div
-                                    class="absolute inset-1 w-4 h-4 bg-blue-500 rounded-full scale-0 peer-checked:scale-100 transition-all">
-                                </div>
-                            </div>
-                            <span class="ml-3 text-gray-700 group-hover:text-blue-600 transition-colors">
-                                Ingles
-                            </span>
-                        </label>
-                    </div>
+            <div id="contener-play" class="lg:col-span-7 bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/60 p-8 border border-slate-100 flex flex-col items-center relative overflow-hidden">
+                
+                <div class="flex items-center gap-4 mb-8 bg-slate-50 p-2 rounded-2xl border border-slate-100">
+                    <label class="flex items-center cursor-pointer group">
+                        <input type="radio" name="opcion" class="sr-only peer" value="es" checked>
+                        <div class="px-5 py-2 rounded-xl peer-checked:bg-indigo-600 peer-checked:text-white text-slate-500 font-bold transition-all">
+                            Español
+                        </div>
+                    </label>
+                    <label class="flex items-center cursor-pointer group">
+                        <input type="radio" name="opcion" class="sr-only peer" value="en">
+                        <div class="px-5 py-2 rounded-xl peer-checked:bg-indigo-600 peer-checked:text-white text-slate-500 font-bold transition-all">
+                            Inglés
+                        </div>
+                    </label>
                 </div>
 
-                <div class="bg-indigo-100 p-4 rounded-full mb-4">
-                    <span class="text-4xl">🎮</span>
+                <div class="bg-indigo-50 w-20 h-20 flex items-center justify-center rounded-3xl mb-6 shadow-inner">
+                    <span class="text-4xl animate-bounce">🎮</span>
                 </div>
 
-                <h2 class="text-2xl font-bold text-gray-800 mb-2">Adivina la palabra</h2>
-                <p id="areaText" class="text-3xl mb-6 text-center font-semibold text-indigo-900 italic">¿Empezamos?</p>
-
-                <div id="areaEnser"
-                    class="hidden w-full space-y-2 mb-6 p-4 bg-indigo-50 rounded-lg border border-indigo-100">
-                    <p id="translation" class="text-2xl font-bold text-indigo-600"></p>
-                    <p id="pronunciation" class="text-lg text-gray-500 italic"></p>
+                <h2 class="text-slate-400 text-sm font-black uppercase tracking-[0.2em] mb-2">Flashcards</h2>
+                
+                <div class="min-h-[120px] flex items-center justify-center w-full px-4">
+                    <p id="areaText" class="text-3xl md:text-4xl font-extrabold text-slate-800 text-center leading-tight">
+                        ¿Empezamos?
+                    </p>
                 </div>
 
-                <div id="contenerButtonPlay" class="flex flex-col items-center justify-center w-full max-w-sm mx-auto">
+                <div id="areaEnser" class="hidden w-full max-w-md mt-6 p-6 bg-gradient-to-br from-indigo-50 to-slate-50 rounded-3xl border border-indigo-100 text-center transform transition-all">
+                    <p id="translation" class="text-3xl font-black text-indigo-600 mb-1"></p>
+                    <p id="pronunciation" class="text-lg text-slate-400 italic font-medium tracking-wide"></p>
+                </div>
 
-                    <button id="btnBegin"
-                        class="text-sm w-full bg-[#1e293b] hover:bg-[#374B6D] text-white font-bold py-4 px-6 mb-4 rounded-xl shadow-lg transition-all active:scale-95">
-                        ¡JUGAR AHORA!
+                <div id="contenerButtonPlay" class="w-full max-w-sm mt-8 space-y-4">
+                    <button id="btnBegin" class="w-full bg-slate-900 hover:bg-indigo-600 text-white font-bold py-5 px-8 rounded-2xl shadow-xl shadow-indigo-200 transition-all active:scale-[0.97] flex items-center justify-center gap-3 group">
+                        <span>¡JUGAR AHORA!</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
                     </button>
 
-                    <button id="btnShow"
-                        class="hidden text-sm w-full bg-[#1e293b] hover:bg-[#374B6D] text-white font-bold py-4 px-6 mb-4 rounded-xl shadow-lg transition-all active:scale-95">
+                    <button id="btnShow" class="hidden w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-5 px-8 rounded-2xl shadow-lg transition-all active:scale-[0.97]">
                         Mostrar Respuesta
                     </button>
 
-                    <button id="btnNext"
-                        class="hidden text-sm w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-4 px-6 mb-4 rounded-xl shadow-lg transition-all active:scale-95">
+                    <button id="btnNext" class="hidden w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-5 px-8 rounded-2xl shadow-lg shadow-indigo-100 transition-all active:scale-[0.97]">
                         Siguiente Palabra
                     </button>
 
-                    <div id="evaluationButtons" class="hidden flex gap-4 w-full mb-4">
-                        <button id="wrongBtn"
-                            class="flex flex-row items-center justify-center bg-red-500 hover:bg-red-600 text-white font-bold py-3 px-4 rounded-2xl flex-1 shadow-md transition-all active:scale-95">
-                            <span class="text-xl mx-2">✕</span>
-                            <span class="text-xs uppercase tracking-wider">Mal</span>
+                    <div id="evaluationButtons" class="hidden flex gap-4 w-full animate-in fade-in zoom-in duration-300">
+                        <button id="wrongBtn" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-4 px-6 rounded-2xl flex-1 shadow-lg shadow-rose-100 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span class="text-xl">✕</span> <span class="text-sm uppercase tracking-wider">Mal</span>
                         </button>
-
-                        <button id="correctBtn"
-                            class="flex flex-row items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-2xl flex-1 shadow-md transition-all active:scale-95">
-                            <span class="text-xl mx-2">✓</span>
-                            <span class="text-xs uppercase tracking-wider">Bien</span>
+                        <button id="correctBtn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-4 px-6 rounded-2xl flex-1 shadow-lg shadow-emerald-100 transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span class="text-xl">✓</span> <span class="text-sm uppercase tracking-wider">Bien</span>
                         </button>
                     </div>
 
-                    <button id="btnReset"
-                        class="hidden text-sm w-full bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-4 px-6 mb-4 rounded-xl shadow-lg transition-all active:scale-95">
+                    <button id="btnReset" class="hidden w-full bg-amber-500 hover:bg-amber-400 text-white font-bold py-5 px-8 rounded-2xl shadow-lg transition-all active:scale-[0.97]">
                         Reiniciar el Juego
                     </button>
                 </div>
 
-                <div id="containerCheckMode"
-                    class="flex justify-end items-center gap-2 mt-4 border-t border-gray-100 pt-4 w-full">
-                    <label for="checkMode" class="text-xs font-bold uppercase text-gray-400">Modo Evaluación</label>
-                    <input id="checkMode" type="checkbox" class="w-5 h-5 accent-indigo-600 cursor-pointer" checked />
+                <div class="w-full mt-10 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div id="containerCheckMode" class="flex items-center gap-3">
+                        <span class="text-xs font-bold uppercase text-slate-400 tracking-widest">Modo Evaluación</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input id="checkMode" type="checkbox" class="sr-only peer" checked>
+                            <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-indigo-600"></div>
+                        </label>
+                    </div>
                 </div>
 
-                <div id="contenerButtonCategory"
-                    class="flex overflow-x-auto flex-nowrap items-center py-5 px-2 gap-2 w-full mt-4">
-
-                    <button id="btnReg" name="regulares" data-category="reg"
-                        class="category-btn flex-shrink-0 text-sm bg-[#46608B] text-white font-bold py-3 px-6 rounded-xl shadow-lg">
-                        Regulares
-                    </button>
-
-                    <button id="btnIrreg" name="irregulares" data-category="irreg"
-                        class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95">
-                        Irregulares
-                    </button>
-
-                    <button id="btnAmbos" name="ambos" data-category="ambos"
-                        class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95">
-                        Ambos
-                    </button>
-
-                    <button id="btnProfe" name="profesiones" data-category="profe"
-                        class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95">
-                        Profesiones
-                    </button>
-
-                    <button id="btnConect" name="conectivos" data-category="conect"
-                        class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95">
-                        Conectivos
-                    </button>
-
-                    <button id="btnOther" name="other" data-category="other"
-                        class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-95">
-                        Otras palabras
-                    </button>
+                <div id="contenerButtonCategory" class="flex overflow-x-auto custom-scrollbar items-center py-4 px-2 gap-3 w-full mt-4 mask-fade-edges">
+                    <button data-category="reg" class="category-btn flex-shrink-0 text-sm bg-[#46608B] text-white font-bold py-3 px-6 rounded-xl shadow-md transition-all whitespace-nowrap">Regulares</button>
+                    <button data-category="irreg" class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl transition-all whitespace-nowrap">Irregulares</button>
+                    <button data-category="ambos" class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl transition-all whitespace-nowrap">Ambos</button>
+                    <button data-category="profe" class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl transition-all whitespace-nowrap">Profesiones</button>
+                    <button data-category="conect" class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl transition-all whitespace-nowrap">Conectivos</button>
+                    <button data-category="other" class="category-btn flex-shrink-0 text-sm bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-3 px-6 rounded-xl transition-all whitespace-nowrap">Otros</button>
                 </div>
             </div>
 
-            <div id="table-contener" class="bg-white rounded-3xl shadow-xl p-8 border border-gray-100 flex flex-col">
-                <div class="flex items-center justify-center mb-6">
-                    <span class="text-2xl mr-2">🧾</span>
-                    <h2 class="text-xl font-bold text-gray-800 uppercase tracking-wide">Resultados</h2>
+            <div id="table-contener" class="lg:col-span-5 bg-white rounded-[2.5rem] shadow-xl shadow-slate-200/50 p-8 border border-slate-100 flex flex-col">
+                <div class="flex flex-col items-center justify-between mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="p-2 bg-gray-200 rounded-lg text-xl">🧾</div>
+                        <h2 class="text-xl font-black text-slate-800 uppercase tracking-tight">Progreso</h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="px-3 py-1 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <span id="contCorrect" class="text-emerald-600 font-bold text-sm">✓ 0</span>
+                        </div>
+                        <div class="px-3 py-1 bg-rose-50 rounded-lg border border-rose-100">
+                            <span id="contIncorrect" class="text-rose-600 font-bold text-sm">✕ 0</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="flex justify-around text-sm font-bold my-5">
-                    <span id="contCorrect" class="text-emerald-600">✓ Correctas: 0</span>
-                    <span id="contIncorrect" class="text-red-600">✕ Incorrectas: 0</span>
-                </div>
-
-                <div class="overflow-y-auto max-h-[400px] rounded-xl border border-gray-200">
+                <div class="overflow-hidden rounded-3xl border border-slate-100 flex-grow flex flex-col bg-slate-50/50">
                     <table class="w-full text-left border-collapse">
-                        <thead class="bg-gray-50 sticky top-0 shadow-sm">
+                        <thead class="bg-white border-b border-slate-100">
                             <tr>
-                                <th class="px-4 py-3 text-xs font-semibold text-gray-600 uppercase">Palabra</th>
-                                <th class="px-4 py-3 text-xs font-semibold text-gray-600 uppercase text-center">Estado
-                                </th>
+                                <th class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em]">Palabra</th>
+                                <th class="px-6 py-4 text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] text-center">Estado</th>
                             </tr>
                         </thead>
-                        <tbody id="statsTableBody" class="divide-y divide-gray-100">
-                        </tbody>
                     </table>
+                    <div class="overflow-y-auto max-h-[450px] custom-scrollbar">
+                        <table class="w-full text-left border-collapse">
+                            <tbody id="statsTableBody" class="divide-y divide-slate-100">
+                                </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <footer class="py-6 text-center text-gray-400 text-sm">
-        &copy; 2024 Proyecto de Inglés Interactiva
+    <footer class="py-10 text-center">
+        <p class="text-slate-400 text-sm font-medium">
+            &copy; 2026 Proyecto de Inglés Interactiva • <span class="text-indigo-400">Hecho con pasión</span>
+        </p>
     </footer>
 
     <script type="module" src="/js/events_index.js"></script>
