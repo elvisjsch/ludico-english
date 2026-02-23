@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Actualizar UI de botones
             updateCategoryStyles(categoryButtons, e.currentTarget);
-            
+            console.log(category)
             // Cambiar lógica de datos
             logica.changeCategory(category, elements);
         });
@@ -80,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
  * Gestiona visualmente qué categoría está seleccionada
  */
 function updateCategoryStyles(allButtons, activeBtn) {
-    const activeClasses = ['bg-[#46608B]', 'text-white', 'shadow-md'];
-    const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300'];
+    const activeClasses = ['bg-indigo-600', 'text-white', 'shadow-md'];
+    const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300','transition-all', 'active:scale-95'];
 
     allButtons.forEach(btn => {
         btn.classList.remove(...activeClasses);
