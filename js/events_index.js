@@ -2,7 +2,7 @@
 import * as logica from './logica_index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Mapeo centralizado de elementos del DOM
     const elements = {
         btnBegin: document.getElementById("btnBegin"),
@@ -21,7 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
         wrongBtn: document.getElementById("wrongBtn"),
         checkMode: document.getElementById("checkMode"),
         contenerCategory: document.getElementById('contenerButtonCategory'),
-        radios: document.querySelectorAll('input[name="opcion"]')
+        radios: document.querySelectorAll('input[name="opcion"]'),
+        contCorrect: document.getElementById("contCorrect"),
+        contIncorrect: document.getElementById("contIncorrect")
     };
 
     // 2. Inicialización de Juego
@@ -49,11 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 5. Gestión de Categorías
     const categoryButtons = document.querySelectorAll('.category-btn');
-    
+
     categoryButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
             const category = e.currentTarget.dataset.category;
-            
+
             // Actualizar UI de botones
             updateCategoryStyles(categoryButtons, e.currentTarget);
             console.log(category)
@@ -74,14 +76,39 @@ document.addEventListener('DOMContentLoaded', () => {
         // Podrías usar location.reload() o llamar a changeCategory con la actual
         location.reload();
     });
+
+    elements.contIncorrect.addEventListener('click', () => {
+        const tbody = Array.from(elements.statsTableBody.rows);
+        tbody.forEach(item =>{
+            let valor = item.cells[1].textContent.trim();
+            if(valor !== '✕'){
+                item.classList.add('hidden');
+            }else{
+                item.classList.remove('hidden');
+            }
+        });
+    });
+        elements.contCorrect.addEventListener('click', () => {
+        const tbody = Array.from(elements.statsTableBody.rows);
+        tbody.forEach(item =>{
+            let valor = item.cells[1].textContent.trim();
+            if(valor === '✕'){
+                item.classList.add('hidden');
+            }else{
+                item.classList.remove('hidden');
+            }
+        });
+    });
 });
+
+
 
 /**
  * Gestiona visualmente qué categoría está seleccionada
  */
 function updateCategoryStyles(allButtons, activeBtn) {
     const activeClasses = ['bg-indigo-600', 'text-white', 'shadow-md'];
-    const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300','transition-all', 'active:scale-95'];
+    const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'transition-all', 'active:scale-95'];
 
     allButtons.forEach(btn => {
         btn.classList.remove(...activeClasses);

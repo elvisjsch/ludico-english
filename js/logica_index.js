@@ -68,7 +68,7 @@ export function showAnswer(elements) {
             elements.translation.textContent = state.currentWord.spanish;
         }
     });
-    elements.pronunciation.textContent = state.currentWord.pron_pre;
+    elements.pronunciation.textContent = state.currentWord.pron_pre || state.currentWord.pron;
     elements.areaEnser.classList.remove('hidden');
     elements.btnShow.classList.add('hidden');
 
@@ -99,7 +99,7 @@ export function recordResult(isCorrect, elements) {
                 <details class="cursor-pointer">
                     <summary class="list-none outline-none">${state.currentWord.english}</summary>
                     <div class="mt-2 text-sm text-gray-500 italic">
-                        Traducción: ${state.currentWord.spanish} (${state.currentWord.pron_pre})
+                        Traducción: ${state.currentWord.spanish} (${state.currentWord.pron_pre || state.currentWord.pron})
                     </div>
                 </details>
             </td>
