@@ -1,7 +1,7 @@
-export { regularVerbs, categories } from './regularVerbs.js';
-export { irregularVerbs } from './irregularVerbs.js';
-export { connectives } from './connectives.js';
-export { regularExamples, irregularExamples, getExamples } from './examples.js';
+import { regularVerbs} from './regularVerbs.js';
+import { irregularVerbs } from './irregularVerbs.js';
+import { connectives } from './connectives.js';
+import { regularExamples, irregularExamples, getExamples } from './examples.js';
 
 export const getVerbsByCategory = (category) => {
   switch (category) {

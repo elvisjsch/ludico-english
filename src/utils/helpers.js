@@ -1,6 +1,7 @@
+  export const activeClasses = ['bg-indigo-600', 'text-white', 'shadow-md'];
+  export const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'transition-all'];
+
 export function updateCategoryStyles(allButtons, activeBtn) {
-  const activeClasses = ['bg-indigo-600', 'text-white', 'shadow-md'];
-  const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'transition-all'];
 
   allButtons.forEach(btn => {
     btn.classList.remove(...activeClasses);
