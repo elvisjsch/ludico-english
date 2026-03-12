@@ -1,5 +1,7 @@
-import { getVerbsByCategory, categories } from '../data/index.js';
+import { getVerbsByCategory } from '../data/index.js';
 import { storage, shuffleArray, createResultRow, getRandomItem } from '../utils/index.js';
+import { updateCategoryStyles, activeClasses, inactiveClasses } from '../utils/helpers.js';
+
 
 let gameState = {
   wordsCopy: [],
@@ -16,6 +18,15 @@ export function initFlashcards(elements) {
   setupEventListeners(elements);
 }
 
+function updateSelectCategory(elements) {
+  elements.categoryButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const category = e.currentTarget.dataset.category;
+      updateCategoryStyles(elements.categoryButtons, e.currentTarget);
+    });
+  });
+}
+
 function loadCategory(category, elements) {
   const verbs = getVerbsByCategory(category);
   gameState.wordsCopy = shuffleArray([...verbs]);
@@ -29,7 +40,7 @@ function loadCategory(category, elements) {
   elements.contCorrect.textContent = '✓ Correctas: 0';
   elements.contIncorrect.textContent = '✕ Incorrectas: 0';
   elements.statsTableBody.innerHTML = '';
-  
+
   elements.btnBegin.classList.remove('hidden');
   elements.btnShow.classList.add('hidden');
   elements.btnNext.classList.add('hidden');
@@ -40,23 +51,40 @@ function loadCategory(category, elements) {
 }
 
 function setupEventListeners(elements) {
-  elements.btnBegin.addEventListener('click', () => startGame(elements));
-  elements.btnShow.addEventListener('click', () => showAnswer(elements));
-  elements.btnNext.addEventListener('click', () => loadQuestion(elements));
-  elements.correctBtn.addEventListener('click', () => recordResult(true, elements));
-  elements.wrongBtn.addEventListener('click', () => recordResult(false, elements));
-  elements.btnReset.addEventListener('click', () => resetGame(elements));
+  const { 
+    btnBegin, btnShow, btnNext, correctBtn, wrongBtn, 
+    btnReset, categoryButtons, contCorrect, contIncorrect, allResult 
+  } = elements;
 
-  elements.categoryButtons.forEach(btn => {
+  // 1. Acciones simples (Agrupadas para lectura rápida)
+  btnBegin.onclick = () => startGame(elements);
+  btnShow.onclick  = () => showAnswer(elements);
+  btnNext.onclick  = () => loadQuestion(elements);
+  btnReset.onclick = () => resetGame(elements);
+
+  // 2. Registro de resultados (Acierto/Fallo)
+  correctBtn.onclick = () => recordResult(true, elements);
+  wrongBtn.onclick   = () => recordResult(false, elements);
+
+  // 3. Selección de Categoría con actualización visual
+  categoryButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      const category = e.currentTarget.dataset.category;
+      const selectedBtn = e.currentTarget;
+      const category = selectedBtn.dataset.category;
+
+      // Lógica de datos
       loadCategory(category, elements);
     });
   });
 
-  elements.contCorrect.addEventListener('click', () => filterResults(true, elements));
-  elements.contIncorrect.addEventListener('click', () => filterResults(false, elements));
+  updateSelectCategory(elements);
+
+  // 4. Filtros de resultados
+  contCorrect.onclick   = () => filterResults(true, elements);
+  contIncorrect.onclick = () => filterResults(false, elements);
+  allResult.onclick = () => showAllResult(elements);
 }
+
 
 function startGame(elements) {
   gameState.start = true;
@@ -77,9 +105,9 @@ function loadQuestion(elements) {
   }
 
   gameState.currentWord = getRandomItem(gameState.wordsCopy);
-  
+
   const selectedLang = document.querySelector('input[name="opcion"]:checked')?.value || 'es';
-  
+
   if (selectedLang === 'es') {
     elements.areaText.textContent = `¿Cómo se dice "${gameState.currentWord.spanish}"?`;
   } else {
@@ -95,19 +123,19 @@ function loadQuestion(elements) {
 
 function showAnswer(elements) {
   const selectedLang = document.querySelector('input[name="opcion"]:checked')?.value || 'es';
-  
+
   if (selectedLang === 'es') {
     elements.translation.textContent = gameState.currentWord.english;
   } else {
     elements.translation.textContent = gameState.currentWord.spanish;
   }
-  
+
   elements.pronunciation.textContent = gameState.currentWord.pron_pre || '';
   elements.areaEnser.classList.remove('hidden');
   elements.btnShow.classList.add('hidden');
 
   const isEvalMode = document.getElementById('checkMode')?.checked;
-  
+
   if (isEvalMode) {
     elements.evaluationButtons.classList.remove('hidden');
   } else {
@@ -135,6 +163,7 @@ function recordResult(isCorrect, elements) {
 }
 
 function resetGame(elements) {
+  elements.btnReset.classList.add('hidden');
   loadCategory(gameState.currentCategory, elements);
 }
 
@@ -147,6 +176,13 @@ function filterResults(showCorrect, elements) {
     } else {
       row.classList.toggle('hidden', isCorrect);
     }
+  });
+}
+
+function showAllResult(elements) {
+  const rows = Array.from(elements.statsTableBody.rows);
+  rows.forEach(row => {
+    row.classList.remove('hidden');
   });
 }
 
