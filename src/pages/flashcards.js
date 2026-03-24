@@ -130,7 +130,7 @@ function showAnswer(elements) {
     elements.translation.textContent = gameState.currentWord.spanish;
   }
 
-  elements.pronunciation.textContent = gameState.currentWord.pron_pre || '';
+  elements.pronunciation.textContent = gameState.currentWord.pron_pre || gameState.currentWord.pron || '';
   elements.areaEnser.classList.remove('hidden');
   elements.btnShow.classList.add('hidden');
 

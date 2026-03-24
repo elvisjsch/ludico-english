@@ -1,6 +1,4 @@
 import { getVerbsByCategory} from '../data/index.js';
-import { irregularVerbs} from '../data/irregularVerbs.js';
-import { regularVerbs} from '../data/regularVerbs.js';
 import { regularExamples, irregularExamples} from '../data/examples.js';
 import { speak } from '../utils/speech.js';
 import { updateCategoryStyles } from '../utils/helpers.js';

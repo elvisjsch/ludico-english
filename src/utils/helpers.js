@@ -33,7 +33,7 @@ export function createResultRow(word, isCorrect) {
       <details class="cursor-pointer">
         <summary class="list-none outline-none">${word.english}</summary>
         <div class="mt-2 text-sm text-gray-500 italic">
-          Traducción: ${word.spanish} (${word.pron_pre || word.pron || ''})
+          Traducción: ${word.spanish} (${word.pron_pre || word.pron || 'Hola'})
         </div>
       </details>
     </td>
