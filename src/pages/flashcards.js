@@ -1,5 +1,5 @@
 import { getVerbsByCategory } from '../data/index.js';
-import { storage, shuffleArray, createResultRow, getRandomItem } from '../utils/index.js';
+import { storage, shuffleArray, createResultRow, getRandomItem, speak } from '../utils/index.js';
 import { updateCategoryStyles, activeClasses, inactiveClasses } from '../utils/helpers.js';
 
 
@@ -131,6 +131,9 @@ function showAnswer(elements) {
   }
 
   elements.pronunciation.textContent = gameState.currentWord.pron_pre || gameState.currentWord.pron || '';
+  elements.translation.style.cursor = 'pointer';
+  elements.translation.title = 'Click para escuchar';
+  elements.translation.onclick = () => speak(gameState.currentWord.english);
   elements.areaEnser.classList.remove('hidden');
   elements.btnShow.classList.add('hidden');
 
