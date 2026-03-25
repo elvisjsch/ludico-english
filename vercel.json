@@ -1,6 +1,5 @@
 {
   "rewrites": [
-    { "source": "/verbos", "destination": "/verbos.html" },
-    { "source": "/:path(*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
