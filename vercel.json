@@ -1,0 +1,6 @@
+{
+  "rewrites": [
+    { "source": "/verbos", "destination": "/verbos.html" },
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
