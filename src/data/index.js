@@ -1,6 +1,7 @@
 import { regularVerbs} from './regularVerbs.js';
 import { irregularVerbs } from './irregularVerbs.js';
 import { connectives } from './connectives.js';
+import { adjectives } from './adjectives.js';
 import { regularExamples, irregularExamples, getExamples } from './examples.js';
 
 export const getVerbsByCategory = (category) => {
@@ -13,6 +14,8 @@ export const getVerbsByCategory = (category) => {
       return [...regularVerbs, ...irregularVerbs];
     case 'conect':
       return connectives;
+    case 'adj':
+      return adjectives;
     default:
       return regularVerbs;
   }

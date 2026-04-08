@@ -141,6 +141,7 @@ export const categories = {
   irreg: 'Irregulares', 
   ambos: 'Ambos',
   conect: 'Conectivos',
+  adj: 'Adjetivos',
   profe: 'Profesiones',
   other: 'Otros'
 };

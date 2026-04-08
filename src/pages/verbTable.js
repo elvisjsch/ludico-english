@@ -23,9 +23,12 @@ function setupCategoryListeners(elements) {
 function renderVerbs(category, elements) {
   const verbs = getVerbsByCategory(category);
   const isConnective = category === 'conect';
+  const isAdjective = category === 'adj';
 
   if (isConnective) {
     renderConnectives(verbs, elements);
+  } else if (isAdjective) {
+    renderAdjectives(verbs, elements);
   } else {
     const examples = category === 'irreg' ? irregularExamples : regularExamples;
     renderVerbTable(verbs, examples, elements);
@@ -61,6 +64,77 @@ function renderConnectives(connectives, elements) {
   });
 
   elements.statsTableBodys.appendChild(fragment);
+}
+
+function renderAdjectives(adjectives, elements) {
+  const targetTable = document.getElementById('table-adj');
+  const targetBody = document.getElementById('statsTableBodyAdj');
+  targetBody.innerHTML = '';
+
+  document.getElementById('table-verbo').classList.add('hidden');
+  document.getElementById('table-conect').classList.add('hidden');
+  targetTable.classList.remove('hidden');
+
+  const fragment = document.createDocumentFragment();
+
+  adjectives.forEach(adj => {
+    const row = createAdjectiveRow(adj);
+    fragment.appendChild(row);
+  });
+
+  targetBody.appendChild(fragment);
+}
+
+function createAdjectiveRow(adj) {
+  const row = document.createElement('tr');
+  row.className = 'hover:bg-indigo-50/30 transition-colors border-b border-gray-50';
+
+  row.innerHTML = `
+    <td class="px-6 py-4 text-base font-medium text-indigo-600">
+      <div class="flex items-center gap-2">
+        <button class="speak-btn p-1.5 bg-indigo-100 hover:bg-indigo-200 rounded-full transition-colors" title="Escuchar">
+          <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"></path>
+          </svg>
+        </button>
+        <details name="verb-details" class="group cursor-pointer">
+          <summary class="list-none outline-none font-bold hover:text-indigo-800 transition-colors flex items-center justify-start gap-2">
+            <svg class="w-3 h-3 transform group-open:rotate-90 transition-transform text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M9 5l7 7-7 7"></path>
+            </svg>
+            <div class="flex flex-col">
+              ${adj.english}
+              <span class="text-[14px] text-stone-400 font-normal">(${adj.pron || '---'})</span>
+            </div>
+          </summary>
+          <div class="mt-2 p-3 bg-indigo-50/50 border-l-2 border-indigo-400 rounded-r-lg text-left text-gray-600">
+            <p class="text-sm"><strong>Comparativo:</strong> "${adj.comparative || '---'}"</p>
+            <p class="text-sm"><strong>Superlativo:</strong> "${adj.superlative || '---'}"</p>
+          </div>
+        </details>
+      </div>
+    </td>
+    <td class="px-6 py-4 text-center">
+      <div class="flex flex-col cursor-pointer hover:text-indigo-600">
+        <span class="text-base text-gray-600 font-medium">${adj.comparative || '---'}</span>
+      </div>
+    </td>
+    <td class="px-6 py-4 text-center">
+      <div class="flex flex-col cursor-pointer hover:text-indigo-600">
+        <span class="text-base text-gray-500 font-medium">${adj.superlative || '---'}</span>
+      </div>
+    </td>
+    <td class="px-6 py-4 text-center bg-blue-50/30" colspan="2">
+      <span class="text-base font-bold text-blue-600">${adj.spanish}</span>
+    </td>
+  `;
+
+  row.querySelector('.speak-btn').addEventListener('click', (e) => {
+    e.stopPropagation();
+    speak(adj.english);
+  });
+
+  return row;
 }
 
 function createVerbRow(verb, example) {
