@@ -41,6 +41,7 @@ function renderVerbTable(verbs, examples, elements) {
 
   document.getElementById('table-verbo').classList.remove('hidden');
   document.getElementById('table-conect').classList.add('hidden');
+  document.getElementById('table-adj').classList.add('hidden');
 
   verbs.forEach((verb, index) => {
     const example = examples[index] || {};
@@ -57,6 +58,7 @@ function renderConnectives(connectives, elements) {
 
   document.getElementById('table-verbo').classList.add('hidden');
   document.getElementById('table-conect').classList.remove('hidden');
+  document.getElementById('table-adj').classList.add('hidden');
 
   connectives.forEach(item => {
     const row = createConnectiveRow(item);
