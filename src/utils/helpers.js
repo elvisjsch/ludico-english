@@ -1,5 +1,5 @@
   export const activeClasses = ['bg-indigo-600', 'text-white', 'shadow-md'];
-  export const inactiveClasses = ['bg-gray-200', 'text-gray-600', 'hover:bg-gray-300', 'transition-all'];
+  export const inactiveClasses = ['bg-white', 'text-gray-600', 'border', 'border-gray-200', 'hover:bg-gray-50', 'shadow-sm', 'transition-all'];
 
 export function updateCategoryStyles(allButtons, activeBtn) {
 
