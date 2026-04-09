@@ -7,10 +7,11 @@ import { places } from './places.js';
 import { food } from './food.js';
 import { jobs } from './jobs.js';
 import { clothes } from './clothes.js';
-import { regularExamples, irregularExamples, getExamples, familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples } from './examples.js';
+import { vegetables } from './vegetables.js';
+import { regularExamples, irregularExamples, getExamples, familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples } from './examples.js';
 
-export { family, places, food, jobs, clothes };
-export { familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples };
+export { family, places, food, jobs, clothes, vegetables };
+export { familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples };
 
 export const getVerbsByCategory = (category) => {
   switch (category) {

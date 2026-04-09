@@ -540,3 +540,123 @@ export const clothesExamples = [
   { english: "Pajamas", pron: "/padchámas/", spanish: "Pijama" },
   { english: "Swimsuit", pron: "/suimsut/", spanish: "Traje de baño" }
 ];
+
+export const foodFruitsExamples = [
+  { english: "Banana", pron: "/banán/", spanish: "Banano" },
+  { english: "Apple", pron: "/ápel/", spanish: "Manzana" },
+  { english: "Orange", pron: "/óranch/", spanish: "Naranja" },
+  { english: "Strawberry", pron: "/stróberi/", spanish: "Fresa" },
+  { english: "Grape", pron: "/greip/", spanish: "Uva" },
+  { english: "Mango", pron: "/mángou/", spanish: "Mango" },
+  { english: "Pineapple", pron: "/páinapel/", spanish: "Piña" },
+  { english: "Watermelon", pron: "/uátermelon/", spanish: "Sandía" },
+  { english: "Melon", pron: "/mélon/", spanish: "Melón" },
+  { english: "Papaya", pron: "/papáia/", spanish: "Papaya" },
+  { english: "Kiwi", pron: "/kíui/", spanish: "Kiwi" },
+  { english: "Peach", pron: "/pich/", spanish: "Durazno" },
+  { english: "Pear", pron: "/pér/", spanish: "Pera" },
+  { english: "Cherry", pron: "/chéri/", spanish: "Cereza" },
+  { english: "Lemon", pron: "/lémon/", spanish: "Limón" },
+  { english: "Lime", pron: "/láim/", spanish: "Lima" },
+  { english: "Avocado", pron: "/avokádo/", spanish: "Aguacate" },
+  { english: "Coconut", pron: "/kókonat/", spanish: "Coco" },
+  { english: "Pomegranate", pron: "/pómgranat/", spanish: "Granada" },
+  { english: "Grapefruit", pron: "/greipfrut/", spanish: "Toronja" }
+];
+
+export const foodVegetablesExamples = [
+  { english: "Artichoke", pron: "/ártichouk/", spanish: "Alcachofa" },
+  { english: "Eggplant", pron: "/égplant/", spanish: "Berenjena" },
+  { english: "Asparagus", pron: "/aspáragus/", spanish: "Espárrago" },
+  { english: "Beans", pron: "/bins/", spanish: "Frijoles" },
+  { english: "Beet", pron: "/bit/", spanish: "Remolacha" },
+  { english: "Broccoli", pron: "/brókoli/", spanish: "Brócoli" },
+  { english: "Brussels Sprouts", pron: "/brásels próuts/", spanish: "Col de Bruselas" },
+  { english: "Cabbage", pron: "/kábech/", spanish: "Repollo" },
+  { english: "Carrot", pron: "/kérrot/", spanish: "Zanahoria" },
+  { english: "Cauliflower", pron: "/kóliflauer/", spanish: "Coliflor" },
+  { english: "Celery", pron: "/séleri/", spanish: "Apio" },
+  { english: "Corn", pron: "/korn/", spanish: "Maíz" },
+  { english: "Zucchini", pron: "/zukíni/", spanish: "Calabacín" },
+  { english: "Cucumber", pron: "/kiúkamber/", spanish: "Pepino" },
+  { english: "Garlic", pron: "/gárlic/", spanish: "Ajo" },
+  { english: "Leek", pron: "/lik/", spanish: "Puerro" },
+  { english: "Lentils", pron: "/léntils/", spanish: "Lentejas" },
+  { english: "Lettuce", pron: "/létis/", spanish: "Lechuga" },
+  { english: "Mushroom", pron: "/máshrum/", spanish: "Champiñón" },
+  { english: "Onion", pron: "/ánion/", spanish: "Cebolla" },
+  { english: "Peas", pron: "/pis/", spanish: "Guisantes" },
+  { english: "Potato", pron: "/potéitou/", spanish: "Papa" },
+  { english: "Pumpkin", pron: "/pámpkin/", spanish: "Calabaza" },
+  { english: "Spinach", pron: "/spínich/", spanish: "Espinaca" },
+  { english: "Tomato", pron: "/toméitou/", spanish: "Tomate" }
+];
+
+export const foodMeatsExamples = [
+  { english: "Beef", pron: "/bif/", spanish: "Carne de res" },
+  { english: "Ground Beef", pron: "/graund bif/", spanish: "Carne molida" },
+  { english: "Steak", pron: "/steik/", spanish: "Bistec" },
+  { english: "Pork", pron: "/pork/", spanish: "Cerdo" },
+  { english: "Pork Chops", pron: "/pork chóps/", spanish: "Chuletas de cerdo" },
+  { english: "Ham", pron: "/jam/", spanish: "Jamón" },
+  { english: "Bacon", pron: "/béikon/", spanish: "Tocino" },
+  { english: "Sausage", pron: "/sásich/", spanish: "Salchicha" },
+  { english: "Lamb", pron: "/lam/", spanish: "Cordero" },
+  { english: "Veal", pron: "/vil/", spanish: "Carne de ternera" },
+  { english: "Turkey", pron: "/tórki/", spanish: "Pavo" },
+  { english: "Liver", pron: "/láiver/", spanish: "Hígado" },
+  { english: "Tongue", pron: "/táng/", spanish: "Lengua" },
+  { english: "Kidneys", pron: "/kídnis/", spanish: "Riñones" },
+  { english: "Pork Loin", pron: "/pork lóin/", spanish: "Lomo de cerdo" }
+];
+
+export const foodPoultryExamples = [
+  { english: "Chicken", pron: "/chíkin/", spanish: "Pollo" },
+  { english: "Fried Chicken", pron: "/fraied chíkin/", spanish: "Pollo frito" },
+  { english: "Chicken Breast", pron: "/chíkin brest/", spanish: "Pechuga de pollo" },
+  { english: "Chicken Wing", pron: "/chíkin wing/", spanish: "Ala de pollo" },
+  { english: "Chicken Thigh", pron: "/chíkin tai/", spanish: "Muslo de pollo" },
+  { english: "Duck", pron: "/dak/", spanish: "Pato" },
+  { english: "Turkey", pron: "/tórki/", spanish: "Pavo" },
+  { english: "Boneless Chicken", pron: "/bónles chíkin/", spanish: "Pollo deshuesado" }
+];
+
+export const foodSeafoodExamples = [
+  { english: "Fish", pron: "/fish/", spanish: "Pescado" },
+  { english: "Salmon", pron: "/sámon/", spanish: "Salmón" },
+  { english: "Tuna", pron: "/tiúna/", spanish: "Atún" },
+  { english: "Shrimp", pron: "/shrimp/", spanish: "Camarón" },
+  { english: "Crab", pron: "/krab/", spanish: "Cangrejo" },
+  { english: "Lobster", pron: "/lóbster/", spanish: "Langosta" },
+  { english: "Oysters", pron: "/óisters/", spanish: "Ostras" },
+  { english: "Squid", pron: "/skuid/", spanish: "Calamar" },
+  { english: "Octopus", pron: "/óktopus/", spanish: "Pulpo" },
+  { english: "Sardines", pron: "/sárdins/", spanish: "Sardinas" },
+  { english: "Halibut", pron: "/jálibut/", spanish: "Mero" },
+  { english: "Hake", pron: "/heik/", spanish: "Merluza" },
+  { english: "Eel", pron: "/il/", spanish: "Anguila" },
+  { english: "Catfish", pron: "/kátfish/", spanish: "Bagre" },
+  { english: "Trout", pron: "/traut/", spanish: "Trucha" }
+];
+
+export const foodFastFoodExamples = [
+  { english: "Pizza", pron: "/pitsa/", spanish: "Pizza" },
+  { english: "Hamburger", pron: "/jámburger/", spanish: "Hamburguesa" },
+  { english: "Hot Dog", pron: "/jot dog/", spanish: "Perro caliente" },
+  { english: "French Fries", pron: "/french fraiz/", spanish: "Papas fritas" },
+  { english: "Potato Chips", pron: "/potéitou chips/", spanish: "Papas en bolsa" },
+  { english: "Pasta", pron: "/pásta/", spanish: "Pasta" },
+  { english: "Spaghetti", pron: "/spagéti/", spanish: "Espagueti" },
+  { english: "Lasagna", pron: "/lazánya/", spanish: "Lasaña" },
+  { english: "Ravioli", pron: "/ravióli/", spanish: "Ravioles" },
+  { english: "Noodles", pron: "/núdols/", spanish: "Tallarines" },
+  { english: "Sandwich", pron: "/sándwich/", spanish: "Sándwich" },
+  { english: "Taco", pron: "/téikou/", spanish: "Taco" },
+  { english: "Burrito", pron: "/burítou/", spanish: "Burrito" },
+  { english: "Salad", pron: "/sálad/", spanish: "Ensalada" },
+  { english: "Omelet", pron: "/omlét/", spanish: "Tortilla" },
+  { english: "Soup", pron: "/sup/", spanish: "Sopa" },
+  { english: "Sauce", pron: "/sos/", spanish: "Salsa" },
+  { english: "Tomato Sauce", pron: "/toméitou sos/", spanish: "Salsa de tomate" },
+  { english: "Salami", pron: "/sálami/", spanish: "Salami" }
+];
