@@ -8,7 +8,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        verbos: './verbos.html'
+        verbos: './src/pages/verbos.html'
       }
     }
   },

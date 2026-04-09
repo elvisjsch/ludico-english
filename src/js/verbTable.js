@@ -1,7 +1,7 @@
 import { getVerbsByCategory} from '../data/index.js';
 import { irregularVerbs} from '../data/irregularVerbs.js';
 import { regularVerbs} from '../data/regularVerbs.js';
-import { regularExamples, irregularExamples} from '../data/examples.js';
+import { regularExamples, irregularExamples, adjectivesExamples} from '../data/examples.js';
 import { speak } from '../utils/speech.js';
 import { updateCategoryStyles } from '../utils/helpers.js';
 
@@ -28,7 +28,7 @@ function renderVerbs(category, elements) {
   if (isConnective) {
     renderConnectives(verbs, elements);
   } else if (isAdjective) {
-    renderAdjectives(verbs, elements);
+    renderAdjectives(verbs, adjectivesExamples, elements);
   } else {
     const examples = category === 'irreg' ? irregularExamples : regularExamples;
     renderVerbTable(verbs, examples, elements);
@@ -68,7 +68,7 @@ function renderConnectives(connectives, elements) {
   elements.statsTableBodys.appendChild(fragment);
 }
 
-function renderAdjectives(adjectives, elements) {
+function renderAdjectives(adjectives, examples, elements) {
   const targetTable = document.getElementById('table-adj');
   const targetBody = document.getElementById('statsTableBodyAdj');
   targetBody.innerHTML = '';
@@ -79,15 +79,16 @@ function renderAdjectives(adjectives, elements) {
 
   const fragment = document.createDocumentFragment();
 
-  adjectives.forEach(adj => {
-    const row = createAdjectiveRow(adj);
+  adjectives.forEach((adj, index) => {
+    const example = examples[index] || {};
+    const row = createAdjectiveRow(adj, example);
     fragment.appendChild(row);
   });
 
   targetBody.appendChild(fragment);
 }
 
-function createAdjectiveRow(adj) {
+function createAdjectiveRow(adj, example) {
   const row = document.createElement('tr');
   row.className = 'hover:bg-indigo-50/30 transition-colors border-b border-gray-50';
 
@@ -110,8 +111,8 @@ function createAdjectiveRow(adj) {
             </div>
           </summary>
           <div class="mt-2 p-3 bg-indigo-50/50 border-l-2 border-indigo-400 rounded-r-lg text-left text-gray-600">
-            <p class="text-sm"><strong>Comparativo:</strong> "${adj.comparative || '---'}"</p>
-            <p class="text-sm"><strong>Superlativo:</strong> "${adj.superlative || '---'}"</p>
+            <p class="text-sm"><strong>Comparativo:</strong> "${example.example_comp || '---'}"</p>
+            <p class="text-sm"><strong>Superlativo:</strong> "${example.example_sup || '---'}"</p>
           </div>
         </details>
       </div>
