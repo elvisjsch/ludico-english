@@ -159,7 +159,7 @@ function createVerbRow(verb, example) {
             </svg>
             <div class="flex flex-col">
               ${verb.english}
-              <span class="text-[14px] text-stone-400 font-normal">(${verb.pron_pre || '---'})</span>
+              <span class="text-[14px] text-stone-400 font-normal">(${verb.pron || '---'})</span>
             </div>
           </summary>
           <div class="mt-2 p-3 bg-indigo-50/50 border-l-2 border-indigo-400 rounded-r-lg text-left text-gray-600">
