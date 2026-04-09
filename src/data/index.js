@@ -29,3 +29,30 @@ export const getVerbsByCategory = (category) => {
       return regularVerbs;
   }
 };
+
+export const getWordsByCategory = (category) => {
+  switch (category) {
+    case 'reg':
+      return regularVerbs;
+    case 'irreg':
+      return irregularVerbs;
+    case 'ambos':
+      return [...regularVerbs, ...irregularVerbs];
+    case 'conect':
+      return connectives;
+    case 'adj':
+      return adjectives;
+    case 'family':
+      return familyExamples;
+    case 'lugares':
+      return placesExamples;
+    case 'comida':
+      return foodFruitsExamples;
+    case 'ocupaciones':
+      return jobsExamples;
+    case 'ropa':
+      return clothesExamples;
+    default:
+      return regularVerbs;
+  }
+};

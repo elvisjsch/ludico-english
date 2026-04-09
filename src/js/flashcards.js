@@ -1,4 +1,4 @@
-import { getVerbsByCategory } from '../data/index.js';
+import { getVerbsByCategory, getWordsByCategory } from '../data/index.js';
 import { storage, shuffleArray, createResultRow, getRandomItem } from '../utils/index.js';
 import { updateCategoryStyles, activeClasses, inactiveClasses } from '../utils/helpers.js';
 
@@ -9,7 +9,8 @@ let gameState = {
   currentCategory: 'reg',
   start: false,
   good: 0,
-  bad: 0
+  bad: 0,
+  wordLimit: 20
 };
 
 export function initFlashcards(elements) {
@@ -28,8 +29,18 @@ function updateSelectCategory(elements) {
 }
 
 function loadCategory(category, elements) {
-  const verbs = getVerbsByCategory(category);
-  gameState.wordsCopy = shuffleArray([...verbs]);
+  const limitSelect = document.getElementById('wordLimit');
+  const wordLimit = limitSelect ? parseInt(limitSelect.value) : 20;
+  gameState.wordLimit = wordLimit;
+  
+  const words = getWordsByCategory(category);
+  let selectedWords = shuffleArray([...words]);
+  
+  if (wordLimit > 0 && selectedWords.length > wordLimit) {
+    selectedWords = selectedWords.slice(0, wordLimit);
+  }
+  
+  gameState.wordsCopy = selectedWords;
   gameState.currentCategory = category;
   gameState.good = 0;
   gameState.bad = 0;
@@ -55,6 +66,14 @@ function setupEventListeners(elements) {
     btnBegin, btnShow, btnNext, correctBtn, wrongBtn, 
     btnReset, categoryButtons, contCorrect, contIncorrect, allResult 
   } = elements;
+
+  // 0. Selector de límite de palabras
+  const wordLimitSelect = document.getElementById('wordLimit');
+  if (wordLimitSelect) {
+    wordLimitSelect.addEventListener('change', () => {
+      loadCategory(gameState.currentCategory, elements);
+    });
+  }
 
   // 1. Acciones simples (Agrupadas para lectura rápida)
   btnBegin.onclick = () => startGame(elements);
@@ -130,7 +149,7 @@ function showAnswer(elements) {
     elements.translation.textContent = gameState.currentWord.spanish;
   }
 
-  elements.pronunciation.textContent = gameState.currentWord.pron_pre || '';
+  elements.pronunciation.textContent = gameState.currentWord.pron_pre || gameState.currentWord.pron || '';
   elements.areaEnser.classList.remove('hidden');
   elements.btnShow.classList.add('hidden');
 
