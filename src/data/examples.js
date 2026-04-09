@@ -425,3 +425,118 @@ export const getExamples = (verbList, examplesList) => {
     return example || { present: '', past: '', gerund: '' };
   });
 };
+
+export const familyExamples = [
+  { english: "Father", pron: "/fáder/", spanish: "Padre" },
+  { english: "Mother", pron: "/máder/", spanish: "Madre" },
+  { english: "Parents", pron: "/párents/", spanish: "Padres" },
+  { english: "Brother", pron: "/bróder/", spanish: "Hermano" },
+  { english: "Sister", pron: "/sister/", spanish: "Hermana" },
+  { english: "Son", pron: "/san/", spanish: "Hijo" },
+  { english: "Daughter", pron: "/dóter/", spanish: "Hija" },
+  { english: "Grandfather", pron: "/grænd fáder/", spanish: "Abuelo" },
+  { english: "Grandmother", pron: "/grænd máder/", spanish: "Abuela" },
+  { english: "Uncle", pron: "/ánkel/", spanish: "Tío" },
+  { english: "Aunt", pron: "/ant/", spanish: "Tía" },
+  { english: "Cousin", pron: "/kásin/", spanish: "Primo/a" },
+  { english: "Nephew", pron: "/néfiu/", spanish: "Sobrino" },
+  { english: "Niece", pron: "/nis/", spanish: "Sobrina" },
+  { english: "Husband", pron: "/jásband/", spanish: "Esposo" },
+  { english: "Wife", pron: "/uaif/", spanish: "Esposa" },
+  { english: "Boyfriend", pron: "/bóifrend/", spanish: "Novio" },
+  { english: "Girlfriend", pron: "/gérlfrend/", spanish: "Novia" },
+  { english: "Child", pron: "/cháild/", spanish: "Niño/a" },
+  { english: "Children", pron: "/children/", spanish: "Niños" }
+];
+
+export const placesExamples = [
+  { english: "School", pron: "/skul/", spanish: "Escuela" },
+  { english: "University", pron: "/iunivérsiti/", spanish: "Universidad" },
+  { english: "Library", pron: "/láibrari/", spanish: "Biblioteca" },
+  { english: "Hospital", pron: "/jáspital/", spanish: "Hospital" },
+  { english: "Bank", pron: "/bánk/", spanish: "Banco" },
+  { english: "Restaurant", pron: "/réstaurant/", spanish: "Restaurante" },
+  { english: "Hotel", pron: "/jótel/", spanish: "Hotel" },
+  { english: "Airport", pron: "/érport/", spanish: "Aeropuerto" },
+  { english: "Beach", pron: "/bich/", spanish: "Playa" },
+  { english: "Park", pron: "/park/", spanish: "Parque" },
+  { english: "Church", pron: "/chorch/", spanish: "Iglesia" },
+  { english: "Museum", pron: "/miúsiam/", spanish: "Museo" },
+  { english: "Cinema", pron: "/sínema/", spanish: "Cine" },
+  { english: "Gym", pron: "/yim/", spanish: "Gimnasio" },
+  { english: "Mall", pron: "/mol/", spanish: "Centro comercial" },
+  { english: "Market", pron: "/márket/", spanish: "Mercado" },
+  { english: "Zoo", pron: "/zu/", spanish: "Zoológico" },
+  { english: "Pharmacy", pron: "/fármasi/", spanish: "Farmacia" },
+  { english: "Police Station", pron: "/polís stéshon/", spanish: "Comisaría" },
+  { english: "Fire Station", pron: "/fáier stéshon/", spanish: "Estación de bomberos" }
+];
+
+export const foodExamples = [
+  { english: "Banana", pron: "/banán/", spanish: "Banano" },
+  { english: "Apple", pron: "/ápel/", spanish: "Manzana" },
+  { english: "Orange", pron: "/óranch/", spanish: "Naranja" },
+  { english: "Strawberry", pron: "/stróberi/", spanish: "Fresa" },
+  { english: "Grape", pron: "/greip/", spanish: "Uva" },
+  { english: "Mango", pron: "/mángou/", spanish: "Mango" },
+  { english: "Pineapple", pron: "/páinapel/", spanish: "Piña" },
+  { english: "Watermelon", pron: "/uátermelon/", spanish: "Sandía" },
+  { english: "Melon", pron: "/mélon/", spanish: "Melón" },
+  { english: "Papaya", pron: "/papáia/", spanish: "Papaya" },
+  { english: "Kiwi", pron: "/kíui/", spanish: "Kiwi" },
+  { english: "Peach", pron: "/pich/", spanish: "Durazno" },
+  { english: "Pear", pron: "/pér/", spanish: "Pera" },
+  { english: "Cherry", pron: "/chéri/", spanish: "Cereza" },
+  { english: "Lemon", pron: "/lémon/", spanish: "Limón" },
+  { english: "Lime", pron: "/láim/", spanish: "Lima" },
+  { english: "Avocado", pron: "/avokádo/", spanish: "Aguacate" },
+  { english: "Coconut", pron: "/kókonat/", spanish: "Coco" },
+  { english: "Pomegranate", pron: "/pómgranat/", spanish: "Granada" },
+  { english: "Grapefruit", pron: "/greipfrut/", spanish: "Toronja" }
+];
+
+export const jobsExamples = [
+  { english: "Teacher", pron: "/tícher/", spanish: "Profesor" },
+  { english: "Doctor", pron: "/dóktor/", spanish: "Médico" },
+  { english: "Nurse", pron: "/nors/", spanish: "Enfermera" },
+  { english: "Engineer", pron: "/enyinír/", spanish: "Ingeniero" },
+  { english: "Lawyer", pron: "/lóier/", spanish: "Abogado" },
+  { english: "Accountant", pron: "/akáuntant/", spanish: "Contador" },
+  { english: "Architect", pron: "/árkitekt/", spanish: "Arquitecto" },
+  { english: "Artist", pron: "/ártist/", spanish: "Artista" },
+  { english: "Baker", pron: "/béiker/", spanish: "Panadero" },
+  { english: "Barber", pron: "/bárber/", spanish: "Barbero" },
+  { english: "Carpenter", pron: "/kárpenter/", spanish: "Carpintero" },
+  { english: "Chef", pron: "/shef/", spanish: "Cocinero" },
+  { english: "Dentist", pron: "/déntist/", spanish: "Dentista" },
+  { english: "Driver", pron: "/dráiver/", spanish: "Conductor" },
+  { english: "Electrician", pron: "/elektrísian/", spanish: "Electricista" },
+  { english: "Farmer", pron: "/fármer/", spanish: "Agricultor" },
+  { english: "Journalist", pron: "/yórnalist/", spanish: "Periodista" },
+  { english: "Mechanic", pron: "/mekánik/", spanish: "Mecánico" },
+  { english: "Pilot", pron: "/páilot/", spanish: "Piloto" },
+  { english: "Policeman", pron: "/polísman/", spanish: "Policía" }
+];
+
+export const clothesExamples = [
+  { english: "Shirt", pron: "/sher/", spanish: "Camisa" },
+  { english: "Pants", pron: "/pánts/", spanish: "Pantalones" },
+  { english: "Dress", pron: "/dres/", spanish: "Vestido" },
+  { english: "Skirt", pron: "/skert/", spanish: "Falda" },
+  { english: "Shoes", pron: "/shus/", spanish: "Zapatos" },
+  { english: "Socks", pron: "/soks/", spanish: "Medias" },
+  { english: "Jacket", pron: "/yáket/", spanish: "Chaqueta" },
+  { english: "Sweater", pron: "/suéter/", spanish: "Suéter" },
+  { english: "Hat", pron: "/jat/", spanish: "Sombrero" },
+  { english: "Cap", pron: "/kap/", spanish: "Gorra" },
+  { english: "Tie", pron: "/tái/", spanish: "Corbata" },
+  { english: "Belt", pron: "/belt/", spanish: "Correa" },
+  { english: "Gloves", pron: "/glovs/", spanish: "Guantes" },
+  { english: "Scarf", pron: "/skarf/", spanish: "Bufanda" },
+  { english: "Boots", pron: "/buts/", spanish: "Botas" },
+  { english: "Sandals", pron: "/sándels/", spanish: "Sandalias" },
+  { english: "Sneakers", pron: "/snikers/", spanish: "Zapatillas" },
+  { english: "Uniform", pron: "/iúniform/", spanish: "Uniforme" },
+  { english: "Pajamas", pron: "/padchámas/", spanish: "Pijama" },
+  { english: "Swimsuit", pron: "/suimsut/", spanish: "Traje de baño" }
+];

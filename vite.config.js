@@ -8,7 +8,12 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: './index.html',
-        verbos: './src/pages/verbos.html'
+        verbos: './src/pages/verbos.html',
+        familia: './src/pages/familia.html',
+        lugares: './src/pages/lugares.html',
+        comida: './src/pages/comida.html',
+        ocupaciones: './src/pages/ocupaciones.html',
+        ropa: './src/pages/ropa.html'
       }
     }
   },

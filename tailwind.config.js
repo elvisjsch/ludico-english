@@ -1,7 +1,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/pages/verbos.html",
+    "./src/pages/*.html",
     "./src/**/*.{js,ts,jsx,tsx,.html}",
   ],
   theme: {
