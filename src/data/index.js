@@ -47,7 +47,18 @@ export const getWordsByCategory = (category) => {
     case 'lugares':
       return placesExamples;
     case 'comida':
+    case 'frutas':
       return foodFruitsExamples;
+    case 'vegetales':
+      return foodVegetablesExamples;
+    case 'carnes':
+      return foodMeatsExamples;
+    case 'aves':
+      return foodPoultryExamples;
+    case 'pescados':
+      return foodSeafoodExamples;
+    case 'rapida':
+      return foodFastFoodExamples;
     case 'ocupaciones':
       return jobsExamples;
     case 'ropa':

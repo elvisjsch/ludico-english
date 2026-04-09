@@ -5,13 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PlayIngles - Aprende Inglés</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/src/styles/main.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
 </head>
 
-<body class="bg-slate-50 min-h-screen flex flex-col text-slate-900 font-sans">
+<body class="bg-slate-50 min-h-screen flex flex-col text-slate-900">
 
     <header class="bg-white py-6 border-b border-slate-200 shadow-sm">
         <h1 class="text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 tracking-tight uppercase">
@@ -22,13 +29,11 @@
     <nav class="bg-indigo-600 shadow-lg sticky top-0 z-50">
         <div class="max-w-5xl mx-auto px-4">
             <div class="flex justify-center space-x-6 py-3 flex-wrap">
-                <a href="index.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-white pb-1">Principal</a>
-                <a href="/src/pages/verbos.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Verbos</a>
-                <a href="/src/pages/familia.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Familia</a>
-                <a href="/src/pages/lugares.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Lugares</a>
-                <a href="/src/pages/comida.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Comida</a>
-                <a href="/src/pages/ocupaciones.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ocupaciones</a>
-                <a href="/src/pages/ropa.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ropa</a>
+                <a href="#" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-white pb-1">Principal</a>
+                <a href="#" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Verbos</a>
+                <a href="#" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Familia</a>
+                <a href="#" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Lugares</a>
+                <a href="#" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Comida</a>
             </div>
         </div>
     </nav>
@@ -36,6 +41,7 @@
     <main class="flex-grow flex items-center justify-center p-4 md:p-6">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-5xl">
 
+            <!-- Flashcard Section -->
             <div id="contener-play" class="lg:col-span-7 bg-white rounded-[2rem] shadow-xl shadow-slate-200/60 p-6 border border-slate-100 flex flex-col items-center relative overflow-hidden">
                 
                 <div class="flex items-center gap-3 mb-6 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
@@ -59,13 +65,13 @@
 
                 <h2 class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-1">Flashcards</h2>
                 
-                <div class="min-h-[100px] flex items-center justify-center w-full px-4">
-                    <p id="areaText" class="text-2xl md:text-3xl font-extrabold text-slate-800 text-center leading-tight">
+                <div class="min-h-[120px] flex items-center justify-center w-full px-4">
+                    <p id="areaText" class="text-2xl md:text-3xl font-extrabold text-slate-800 text-center leading-tight transition-all duration-300">
                         ¿Empezamos?
                     </p>
                 </div>
 
-                <div id="areaEnser" class="hidden w-full max-w-xs mt-4 p-4 bg-gradient-to-br from-indigo-50 to-slate-50 rounded-2xl border border-indigo-100 text-center transform transition-all">
+                <div id="areaEnser" class="hidden w-full max-w-xs mt-4 p-4 bg-gradient-to-br from-indigo-50 to-slate-50 rounded-2xl border border-indigo-100 text-center">
                     <p id="translation" class="text-2xl font-black text-indigo-600 mb-1"></p>
                     <p id="pronunciation" class="text-sm text-slate-400 italic font-medium tracking-wide"></p>
                 </div>
@@ -86,7 +92,7 @@
                         Siguiente Palabra
                     </button>
 
-                    <div id="evaluationButtons" class="flex gap-3 w-full animate-in fade-in zoom-in duration-300">
+                    <div id="evaluationButtons" class="hidden flex gap-3 w-full animate-in fade-in zoom-in duration-300">
                         <button id="wrongBtn" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-xl flex-1 shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
                             <span class="text-lg">✕</span> <span class="text-xs uppercase">Mal</span>
                         </button>
@@ -113,40 +119,36 @@
                 <div id="contenerButtonCategory" class="flex overflow-x-auto custom-scrollbar items-center py-3 px-2 gap-2 w-full mt-2">
                     <button data-category="reg" class="category-btn flex-shrink-0 text-xs bg-indigo-600 text-white font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all whitespace-nowrap">Regulares</button>
                     <button data-category="irreg" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Irregulares</button>
-                    <button data-category="ambos" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Ambos</button>
                     <button data-category="conect" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Conectivos</button>
                     <button data-category="adj" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Adjetivos</button>
                     <button data-category="family" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Familia</button>
-                    <button data-category="lugares" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Lugares</button>
                     <button data-category="comida" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Comida</button>
-                    <button data-category="ocupaciones" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Ocupaciones</button>
-                    <button data-category="ropa" class="category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 hover:bg-gray-300 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap">Ropa</button>
                 </div>
 
                 <div class="flex items-center gap-2 mt-3 w-full justify-center">
                     <label class="text-xs font-bold text-slate-400 uppercase">Límite:</label>
                     <select id="wordLimit" class="text-xs bg-slate-50 border border-slate-200 rounded-lg px-2 py-1.5 font-bold text-slate-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="5">5</option>
                         <option value="10">10</option>
                         <option value="20" selected>20</option>
-                        <option value="30">30</option>
                         <option value="0">Todos</option>
                     </select>
                 </div>
-                </div>
             </div>
 
+            <!-- Stats Section -->
             <div id="table-contener" class="lg:col-span-5 bg-white rounded-[2rem] shadow-lg shadow-slate-200/50 p-6 border border-slate-100 flex flex-col">
                 <div class="flex flex-col items-center justify-between mb-6">
-                    <div id="allResult" class="flex items-center gap-2">
+                    <div id="allResult" class="flex items-center gap-2 mb-2">
                         <div class="p-1.5 bg-gray-100 rounded-lg text-lg">🧾</div>
                         <h2 class="text-lg font-black text-slate-800 uppercase tracking-tight">Progreso</h2>
                     </div>
                     <div class="flex gap-2">
                         <div class="px-2.5 py-1 bg-emerald-50 rounded-lg border border-emerald-100">
-                            <span id="contCorrect" class="text-emerald-600 font-bold text-xs cursor-pointer hover:text-emerald-700">✓ Correctas: 0</span>
+                            <span id="contCorrect" class="text-emerald-600 font-bold text-xs">✓ Correctas: 0</span>
                         </div>
                         <div class="px-2.5 py-1 bg-rose-50 rounded-lg border border-rose-100">
-                            <span id="contIncorrect" class="text-rose-600 font-bold text-xs cursor-pointer hover:text-rose-700">✕ Incorrectas: 0</span>
+                            <span id="contIncorrect" class="text-rose-600 font-bold text-xs">✕ Incorrectas: 0</span>
                         </div>
                     </div>
                 </div>
@@ -160,16 +162,16 @@
                             </tr>
                         </thead>
                     </table>
-                    <div class="overflow-y-auto max-h-[380px] custom-scrollbar">
+                    <div class="overflow-y-auto max-h-[350px] custom-scrollbar">
                         <table class="w-full text-left border-collapse">
                             <tbody id="statsTableBody" class="divide-y divide-slate-100">
+                                <!-- Filas dinámicas -->
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="py-6 text-center">
@@ -178,12 +180,54 @@
         </p>
     </footer>
 
-    <script type="module" src="/src/js/flashcards.js"></script>
-    <script type="module">
-        import { initFlashcards } from '/src/js/flashcards.js';
+    <script>
+        // --- DATOS DE LAS FLASHCARDS ---
+        const FLASHCARDS_DATA = {
+            reg: [
+                { word: "Work", phonetic: "/wɜːrk/", translation: "Trabajar" },
+                { word: "Listen", phonetic: "/ˈlɪsən/", translation: "Escuchar" },
+                { word: "Clean", phonetic: "/kliːn/", translation: "Limpiar" },
+                { word: "Look", phonetic: "/lʊk/", translation: "Mirar" },
+                { word: "Talk", phonetic: "/tɔːk/", translation: "Hablar" }
+            ],
+            irreg: [
+                { word: "Go", phonetic: "/ɡoʊ/", translation: "Ir" },
+                { word: "Eat", phonetic: "/iːt/", translation: "Comer" },
+                { word: "Sleep", phonetic: "/sliːp/", translation: "Dormir" },
+                { word: "Buy", phonetic: "/baɪ/", translation: "Comprar" },
+                { word: "Drive", phonetic: "/draɪv/", translation: "Conducir" }
+            ],
+            family: [
+                { word: "Father", phonetic: "/ˈfɑːðər/", translation: "Padre" },
+                { word: "Mother", phonetic: "/ˈmʌðər/", translation: "Madre" },
+                { word: "Sibling", phonetic: "/ˈsɪblɪŋ/", translation: "Hermano/a" },
+                { word: "Grandmother", phonetic: "/ˈɡrænmʌðər/", translation: "Abuela" },
+                { word: "Uncle", phonetic: "/ˈʌŋkəl/", translation: "Tío" }
+            ],
+            adj: [
+                { word: "Happy", phonetic: "/ˈhæpi/", translation: "Feliz" },
+                { word: "Brave", phonetic: "/breɪv/", translation: "Valiente" },
+                { word: "Cold", phonetic: "/koʊld/", translation: "Frío" },
+                { word: "Smart", phonetic: "/smɑːrt/", translation: "Inteligente" },
+                { word: "Strong", phonetic: "/strɔːŋ/", translation: "Fuerte" }
+            ],
+            conect: [
+                { word: "However", phonetic: "/haʊˈevər/", translation: "Sin embargo" },
+                { word: "Therefore", phonetic: "/ˈðerfɔːr/", translation: "Por lo tanto" },
+                { word: "Because", phonetic: "/bɪˈkɒz/", translation: "Porque" },
+                { word: "Also", phonetic: "/ˈɔːlsoʊ/", translation: "También" }
+            ],
+            comida: [
+                { word: "Apple", phonetic: "/ˈæpəl/", translation: "Manzana" },
+                { word: "Bread", phonetic: "/bred/", translation: "Pan" },
+                { word: "Cheese", phonetic: "/tʃiːz/", translation: "Queso" },
+                { word: "Water", phonetic: "/ˈwɔːtər/", translation: "Agua" }
+            ]
+        };
 
+        // --- LÓGICA DE LA APP ---
         document.addEventListener('DOMContentLoaded', () => {
-            const elements = {
+            const el = {
                 btnBegin: document.getElementById('btnBegin'),
                 btnShow: document.getElementById('btnShow'),
                 btnNext: document.getElementById('btnNext'),
@@ -197,14 +241,128 @@
                 contCorrect: document.getElementById('contCorrect'),
                 contIncorrect: document.getElementById('contIncorrect'),
                 correctBtn: document.getElementById('correctBtn'),
-                allResult: document.getElementById('allResult'),
                 wrongBtn: document.getElementById('wrongBtn'),
                 checkMode: document.getElementById('checkMode'),
-                contenerCategory: document.getElementById('contenerButtonCategory'),
                 categoryButtons: document.querySelectorAll('.category-btn'),
+                wordLimit: document.getElementById('wordLimit')
             };
-            
-            initFlashcards(elements);
+
+            let currentWords = [];
+            let currentIndex = 0;
+            let score = { correct: 0, incorrect: 0 };
+
+            const speak = (text) => {
+                if ('speechSynthesis' in window) {
+                    window.speechSynthesis.cancel();
+                    const ut = new SpeechSynthesisUtterance(text);
+                    ut.lang = 'en-US';
+                    ut.rate = 0.85;
+                    window.speechSynthesis.speak(ut);
+                }
+            };
+
+            const loadCategory = (catId) => {
+                const data = FLASHCARDS_DATA[catId] || FLASHCARDS_DATA.reg;
+                currentWords = [...data].sort(() => Math.random() - 0.5);
+                
+                const limit = parseInt(el.wordLimit.value);
+                if (limit > 0) currentWords = currentWords.slice(0, limit);
+
+                currentIndex = 0;
+                score = { correct: 0, incorrect: 0 };
+                el.statsTableBody.innerHTML = '';
+                updateUI();
+                startTurn();
+            };
+
+            const startTurn = () => {
+                if (currentIndex >= currentWords.length) {
+                    endGame();
+                    return;
+                }
+
+                const item = currentWords[currentIndex];
+                const mode = document.querySelector('input[name="opcion"]:checked').value;
+                
+                el.areaText.textContent = mode === 'es' ? item.translation : item.word;
+                if (mode === 'en') speak(item.word);
+
+                el.areaEnser.classList.add('hidden');
+                el.btnBegin.classList.add('hidden');
+                el.btnShow.classList.remove('hidden');
+                el.btnNext.classList.add('hidden');
+                el.evaluationButtons.classList.add('hidden');
+                el.btnReset.classList.add('hidden');
+            };
+
+            const showAnswer = () => {
+                const item = currentWords[currentIndex];
+                const mode = document.querySelector('input[name="opcion"]:checked').value;
+
+                el.translation.textContent = mode === 'es' ? item.word : item.translation;
+                el.pronunciation.textContent = item.phonetic;
+                el.areaEnser.classList.remove('hidden');
+                el.btnShow.classList.add('hidden');
+
+                speak(item.word);
+
+                if (el.checkMode.checked) {
+                    el.evaluationButtons.classList.remove('hidden');
+                } else {
+                    el.btnNext.classList.remove('hidden');
+                }
+            };
+
+            const processResult = (ok) => {
+                const item = currentWords[currentIndex];
+                if (ok) score.correct++; else score.incorrect++;
+                
+                addStatRow(item.word, ok);
+                updateUI();
+                currentIndex++;
+                startTurn();
+            };
+
+            const addStatRow = (word, ok) => {
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition-colors";
+                tr.innerHTML = `
+                    <td class="px-5 py-3 text-sm font-semibold text-slate-700">${word}</td>
+                    <td class="px-5 py-3 text-center">
+                        <span class="px-2 py-1 rounded-md text-[9px] font-black uppercase ${ok ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700'}">
+                            ${ok ? 'Bien' : 'Mal'}
+                        </span>
+                    </td>
+                `;
+                el.statsTableBody.prepend(tr);
+            };
+
+            const updateUI = () => {
+                el.contCorrect.textContent = `✓ Correctas: ${score.correct}`;
+                el.contIncorrect.textContent = `✕ Incorrectas: ${score.incorrect}`;
+            };
+
+            const endGame = () => {
+                el.areaText.innerHTML = `<div class="text-center">🏆 ¡Terminado!<br><span class="text-sm font-normal text-slate-400">Puntuación: ${score.correct}/${currentWords.length}</span></div>`;
+                el.areaEnser.classList.add('hidden');
+                el.btnReset.classList.remove('hidden');
+            };
+
+            // Eventos
+            el.btnBegin.onclick = () => loadCategory('reg');
+            el.btnShow.onclick = showAnswer;
+            el.correctBtn.onclick = () => processResult(true);
+            el.wrongBtn.onclick = () => processResult(false);
+            el.btnNext.onclick = () => { currentIndex++; startTurn(); };
+            el.btnReset.onclick = () => location.reload();
+
+            el.categoryButtons.forEach(btn => {
+                btn.onclick = () => {
+                    el.categoryButtons.forEach(b => b.className = "category-btn flex-shrink-0 text-xs bg-gray-200 text-gray-600 font-bold py-2.5 px-4 rounded-lg transition-all whitespace-nowrap");
+                    btn.className = "category-btn flex-shrink-0 text-xs bg-indigo-600 text-white font-bold py-2.5 px-4 rounded-lg shadow-sm transition-all whitespace-nowrap";
+                    loadCategory(btn.dataset.category);
+                };
+            });
         });
     </script>
 </body>

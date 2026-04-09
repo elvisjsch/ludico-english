@@ -34,13 +34,13 @@ function loadCategory(category, elements) {
   gameState.wordLimit = wordLimit;
   
   const words = getWordsByCategory(category);
-  let selectedWords = shuffleArray([...words]);
+  let selectedWords = [...words];
   
   if (wordLimit > 0 && selectedWords.length > wordLimit) {
     selectedWords = selectedWords.slice(0, wordLimit);
   }
   
-  gameState.wordsCopy = selectedWords;
+  gameState.wordsCopy = shuffleArray(selectedWords);
   gameState.currentCategory = category;
   gameState.good = 0;
   gameState.bad = 0;
