@@ -1,8 +1,8 @@
 export default {
   content: [
     "./index.html",
-    "./verbos.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/verbos.html",
+    "./src/**/*.{js,ts,jsx,tsx,.html}",
   ],
   theme: {
     extend: {
