@@ -45,35 +45,4 @@ export const vegetablesData = [
   { english: "Green onion", pron: "/Grin anion/", spanish: "Cebollín"}
 ];
 
-export const foodMeatsExamples = [
-  { english: "Beef", pron: "/bif/", spanish: "Carne de res"},
-  { english: "Ground Beef", pron: "/graun bif/", spanish: "Carne molida"},
-  { english: "Ground meat", pron: "/graun mit/", spanish: "Carne molida"},
-  { english: "Steak", pron: "/steik/", spanish: "Biste"},
-  { english: "Sirlon steak", pron: "/sirloin steik/", spanish: "Bife de lomo"},
-  { english: "Roast", pron: "/rost/", spanish: "Asado"},
-  { english: "Stewing meat", pron: "/stuin mit/", spanish: "Carne para guisar"},
-  { english: "Pork", pron: "/pork/", spanish: "Cerdo"},
-  { english: "Pork Chops", pron: "/pork shop/", spanish: "Chuletas de cerdo"},
-  { english: "Chop", pron: "/chop/", spanish: "Chuleta"},
-  { english: "Ribs", pron: "/ribs/", spanish: "Costillas"},
-  { english: "Ham", pron: "/jem/", spanish: "Jamon"},
-  { english: "Smoke ham", pron: "/smok jem/", spanish: "Jamon ahumado"},
-  { english: "Bacon", pron: "/beicon/", spanish: "Tocineta"},
-  { english: "Sausage", pron: "/sasech/", spanish: "Chorizo, salchicha"},
-  { english: "Frankfurter", pron: "/frankfrurer/", spanish: "Salchicha"},
-  { english: "Blood sausage", pron: "/blad sasech/", spanish: "Morcilla"},
-  { english: "Lamb", pron: "/lemb/", spanish: "Cordero"},
-  { english: "Veal", pron: "/vil/", spanish: "Carne de ternera"},
-  { english: "Goat", pron: "/gout/", spanish: "Chivo"},
-  { english: "Liver", pron: "/liver/", spanish: "Hígado"},
-  { english: "Kidneys", pron: "/kidni/", spanish: "Riñones"},
-  { english: "Brains", pron: "/breins/", spanish: "Sesos"},
-  { english: "Tongue", pron: "/tong/", spanish: "Lengua"},
-  { english: "Pork Loin", pron: "/pork loin/", spanish: "Lomo de cerdo"},
-  { english: "Leg", pron: "/leg/", spanish: "Pierna"},
-  { english: "Cold cuts", pron: "/cold cat/", spanish: "Fiambres"},
-  { english: "Cold meat", pron: "/cold mit/", spanish: "Fiambres"}
-];
-
 export const foodVegetablesExamples = vegetablesData;

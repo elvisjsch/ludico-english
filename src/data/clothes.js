@@ -66,37 +66,7 @@ export const clothesData = [
   { english: "Lipstick", pron: "/lipstic/", spanish: "Lapiz Labial"},
   { english: "Eyeshadow", pron: "/ais shadou/", spanish: "Sombra Ojo"},
   { english: "Gloves", pron: "/glovs/", spanish: "Guantes"},
-  { english: "Under Wear", pron: "/anderson uer/", spanish: "Ropa Intima"}
+{ english: "Under Wear", pron: "/anderson uer/", spanish: "Ropa Intima"}
 ];
-
-export const foodFruitsExamples = [
-  { english: "A bunch of", pron: "/a bonchof/", spanish: "Muchos(as)"},
-  { english: "Avocado", pron: "/avocaro/", spanish: "Aguacate"},
-  { english: "Banana", pron: "/banana/", spanish: "Banana"},
-  { english: "Grape", pron: "/greips/", spanish: "Uvas"},
-  { english: "Kiwi", pron: "/kiwi/", spanish: "Kiwi"},
-  { english: "Mango", pron: "/mengou/", spanish: "Mango"},
-  { english: "Melon", pron: "/melon/", spanish: "Melón"},
-  { english: "Cantaloupe", pron: "/cantalop/", spanish: "Melón"},
-  { english: "Papaya", pron: "/papaya/", spanish: "Lechoza"},
-  { english: "Pineapple", pron: "/painapol/", spanish: "Piña"},
-  { english: "Grapefruit", pron: "/greifrut/", spanish: "Toronja"},
-  { english: "Orange", pron: "/ornch/", spanish: "Naranja"},
-  { english: "Coconut", pron: "/coconat/", spanish: "Coco"},
-  { english: "Apple", pron: "/apol/", spanish: "Manzana"},
-  { english: "Peach", pron: "/pich/", spanish: "Durazno"},
-  { english: "Pear", pron: "/pier/", spanish: "Pera"},
-  { english: "Plum", pron: "/plam/", spanish: "Ciruela"},
-  { english: "Strawberry", pron: "/strouberri/", spanish: "Fresa"},
-  { english: "Blackberry", pron: "/blackberri/", spanish: "Mora"},
-  { english: "Lemon", pron: "/lemon/", spanish: "Limón"},
-  { english: "Lime", pron: "/laim/", spanish: "Lima"},
-  { english: "Cherry", pron: "/cherri/", spanish: "Cerezas"},
-  { english: "Raisin", pron: "/reisin/", spanish: "Pasas de uva"},
-  { english: "Watermelon", pron: "/uarer melon/", spanish: "Sandia, patilla"},
-  { english: "Medlar", pron: "/medlar/", spanish: "Níspero"},
-  { english: "Pomegranate", pron: "/pomgraneit/", spanish: "Granada"},
-  { english: "Tangerine", pron: "/tanyerin/", spanish: "Mandarina"},
-  { english: "Passionfruit", pron: "/pashon frut/", spanish: "Parchita"},];
 
 export const clothesExamples = clothesData;
