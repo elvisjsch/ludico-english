@@ -53,6 +53,11 @@
                     </table>
                 </div>
             </div>
+
+            <div class="flex items-center gap-2 px-8 py-4 border-t border-gray-100">
+                <label class="text-xs font-bold text-gray-500 uppercase">Límite:</label>
+                <input type="number" id="wordLimit" min="1" placeholder="Todas" class="w-20 text-xs bg-gray-50 border border-gray-200 rounded-lg px-2 py-1.5 font-bold text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+            </div>
         </section>
 
     </main>
@@ -65,11 +70,13 @@
         import { familyExamples } from '/src/data/examples.js';
         import { speak } from '/src/utils/speech.js';
 
-        document.addEventListener('DOMContentLoaded', () => {
+        function renderTable(limit = 0) {
             const tbody = document.getElementById('statsTableBody');
             const fragment = document.createDocumentFragment();
 
-            familyExamples.forEach(item => {
+            const itemsToRender = limit > 0 ? familyExamples.slice(0, limit) : familyExamples;
+
+            itemsToRender.forEach(item => {
                 const row = document.createElement('tr');
                 row.className = 'hover:bg-indigo-50/30 transition-colors border-b border-gray-50';
                 row.innerHTML = `
@@ -95,6 +102,20 @@
             });
 
             tbody.appendChild(fragment);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderTable();
+
+            const limitInput = document.getElementById('wordLimit');
+            if (limitInput) {
+                limitInput.addEventListener('input', () => {
+                    const limit = parseInt(limitInput.value) || 0;
+                    const tbody = document.getElementById('statsTableBody');
+                    tbody.innerHTML = '';
+                    renderTable(limit > 0 ? limit : 0);
+                });
+            }
         });
     </script>
 </body>

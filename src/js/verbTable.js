@@ -1,6 +1,4 @@
 import { getVerbsByCategory} from '../data/index.js';
-import { irregularVerbs} from '../data/irregularVerbs.js';
-import { regularVerbs} from '../data/regularVerbs.js';
 import { regularExamples, irregularExamples, adjectivesExamples} from '../data/examples.js';
 import { speak } from '../utils/speech.js';
 import { updateCategoryStyles } from '../utils/helpers.js';
@@ -8,6 +6,24 @@ import { updateCategoryStyles } from '../utils/helpers.js';
 export function initVerbTable(elements) {
   renderVerbs('reg', elements);
   setupCategoryListeners(elements);
+  setupWordLimitListener(elements);
+}
+
+function getWordLimit() {
+  const limitInput = document.getElementById('wordLimit');
+  const limit = limitInput ? parseInt(limitInput.value) : 0;
+  return limit > 0 ? limit : 0;
+}
+
+function setupWordLimitListener(elements) {
+  const limitInput = document.getElementById('wordLimit');
+  if (limitInput) {
+    limitInput.addEventListener('input', () => {
+      const activeBtn = document.querySelector('.category-btn.bg-indigo-600');
+      const category = activeBtn ? activeBtn.dataset.category : 'reg';
+      renderVerbs(category, elements);
+    });
+  }
 }
 
 function setupCategoryListeners(elements) {
@@ -22,20 +38,21 @@ function setupCategoryListeners(elements) {
 
 function renderVerbs(category, elements) {
   const verbs = getVerbsByCategory(category);
+  const limit = getWordLimit();
   const isConnective = category === 'conect';
   const isAdjective = category === 'adj';
 
   if (isConnective) {
-    renderConnectives(verbs, elements);
+    renderConnectives(verbs, elements, limit);
   } else if (isAdjective) {
-    renderAdjectives(verbs, adjectivesExamples, elements);
+    renderAdjectives(verbs, adjectivesExamples, limit);
   } else {
     const examples = category === 'irreg' ? irregularExamples : regularExamples;
-    renderVerbTable(verbs, examples, elements);
+    renderVerbTable(verbs, examples, elements, limit);
   }
 }
 
-function renderVerbTable(verbs, examples, elements) {
+function renderVerbTable(verbs, examples, elements, limit = 0) {
   const fragment = document.createDocumentFragment();
   elements.statsTableBody.innerHTML = '';
 
@@ -43,8 +60,11 @@ function renderVerbTable(verbs, examples, elements) {
   document.getElementById('table-conect').classList.add('hidden');
   document.getElementById('table-adj').classList.add('hidden');
 
-  verbs.forEach((verb, index) => {
-    const example = examples[index] || {};
+  const verbsToRender = limit > 0 ? verbs.slice(0, limit) : verbs;
+  const examplesToRender = limit > 0 ? examples.slice(0, limit) : examples;
+
+  verbsToRender.forEach((verb, index) => {
+    const example = examplesToRender[index] || {};
     const row = createVerbRow(verb, example);
     fragment.appendChild(row);
   });
@@ -52,7 +72,7 @@ function renderVerbTable(verbs, examples, elements) {
   elements.statsTableBody.appendChild(fragment);
 }
 
-function renderConnectives(connectives, elements) {
+function renderConnectives(connectives, elements, limit = 0) {
   const fragment = document.createDocumentFragment();
   elements.statsTableBodys.innerHTML = '';
 
@@ -60,7 +80,9 @@ function renderConnectives(connectives, elements) {
   document.getElementById('table-conect').classList.remove('hidden');
   document.getElementById('table-adj').classList.add('hidden');
 
-  connectives.forEach(item => {
+  const connectivesToRender = limit > 0 ? connectives.slice(0, limit) : connectives;
+
+  connectivesToRender.forEach(item => {
     const row = createConnectiveRow(item);
     fragment.appendChild(row);
   });
@@ -68,7 +90,7 @@ function renderConnectives(connectives, elements) {
   elements.statsTableBodys.appendChild(fragment);
 }
 
-function renderAdjectives(adjectives, examples, elements) {
+function renderAdjectives(adjectives, examples, limit = 0) {
   const targetTable = document.getElementById('table-adj');
   const targetBody = document.getElementById('statsTableBodyAdj');
   targetBody.innerHTML = '';
@@ -77,10 +99,13 @@ function renderAdjectives(adjectives, examples, elements) {
   document.getElementById('table-conect').classList.add('hidden');
   targetTable.classList.remove('hidden');
 
+  const adjectivesToRender = limit > 0 ? adjectives.slice(0, limit) : adjectives;
+  const examplesToRender = limit > 0 ? examples.slice(0, limit) : examples;
+
   const fragment = document.createDocumentFragment();
 
-  adjectives.forEach((adj, index) => {
-    const example = examples[index] || {};
+  adjectivesToRender.forEach((adj, index) => {
+    const example = examplesToRender[index] || {};
     const row = createAdjectiveRow(adj, example);
     fragment.appendChild(row);
   });
