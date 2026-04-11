@@ -1,20 +1,21 @@
 import { regularVerbs} from './regularVerbs.js';
 import { irregularVerbs } from './irregularVerbs.js';
 import { connectives } from './connectives.js';
-import { adjectives } from './adjectives.js';
+import { adjectivesData } from './adjectives.js';
 import { familyData } from './family.js';
-import { places } from './places.js';
-import { food } from './food.js';
-import { jobs } from './jobs.js';
-import { clothes } from './clothes.js';
-import { vegetables } from './vegetables.js';
-import { regularExamples, irregularExamples, getExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples } from './examples.js';
-import { adverbsExamples } from './adverbs.js';
-import { commonWordsExamples } from './commonWords.js';
+import { placesData } from './places.js';
+import { foodData } from './food.js';
+import { jobsData } from './jobs.js';
+import { clothesData } from './clothes.js';
+import { vegetablesData } from './vegetables.js';
+import { poultryData } from './poultry.js';
+import { seafoodData } from './seafood.js';
+import { regularExamples, irregularExamples, getExamples, foodFruitsExamples, foodMeatsExamples, foodFastFoodExamples } from './examples.js';
+import { adverbsData } from './adverbs.js';
+import { commonWordsData } from './commonWords.js';
 
-export { familyData, places, food, jobs, clothes, vegetables };
-export { placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples };
-export { adverbsExamples, commonWordsExamples };
+export { familyData, placesData, foodData, jobsData, clothesData, vegetablesData, poultryData, seafoodData };
+export { adverbsData, commonWordsData };
 
 export const getVerbsByCategory = (category) => {
   switch (category) {
@@ -44,32 +45,32 @@ export const getWordsByCategory = (category) => {
     case 'conect':
       return connectives;
     case 'adj':
-      return adjectives;
+      return adjectivesData;
     case 'family':
       return familyData;
     case 'lugares':
-      return placesExamples;
+      return placesData;
     case 'comida':
     case 'frutas':
       return foodFruitsExamples;
     case 'vegetales':
-      return foodVegetablesExamples;
+      return vegetablesData;
     case 'carnes':
       return foodMeatsExamples;
     case 'aves':
-      return foodPoultryExamples;
+      return poultryData;
     case 'pescados':
-      return foodSeafoodExamples;
+      return seafoodData;
     case 'rapida':
       return foodFastFoodExamples;
     case 'ocupaciones':
-      return jobsExamples;
+      return jobsData;
     case 'ropa':
-      return clothesExamples;
+      return clothesData;
     case 'adverbs':
-      return adverbsExamples;
+      return adverbsData;
     case 'commonWords':
-      return commonWordsExamples;
+      return commonWordsData;
     default:
       return regularVerbs;
   }

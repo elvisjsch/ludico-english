@@ -1,4 +1,4 @@
-export const adverbsExamples = [
+export const adverbsData = [
   { english: "Yesterday", pron: "/iesterdei/", spanish: "Ayer" },
   { english: "The day before yesterday", pron: "/da dei bifor iesterdei/", spanish: "Antes de ayer" },
   { english: "Yesterday morning", pron: "/iesterdei mornin/", spanish: "Ayer en la mañana" },
@@ -53,5 +53,8 @@ export const adverbsExamples = [
   { english: "Some other time", pron: "/somoder taim/", spanish: "En otra oportunidad" },
   { english: "Now a day", pron: "/nau a dei/", spanish: "Hoy en día" },
   { english: "Now and then", pron: "/nau en den/", spanish: "De ahora en adelante" },
+  { english: "In a minute", pron: "/ina minet/", spanish: "En un tiempo" },
   { english: "Most of the time", pron: "/mosfosda taim/", spanish: "La mayoría del tiempo" }
 ];
+
+export const adverbsExamples = adverbsData;

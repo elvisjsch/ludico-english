@@ -1,4 +1,4 @@
-import { familyData as familyExamples } from '/src/data/family.js';
+import { adverbsData as examples } from '/src/data/adverbs.js';
 import { speak } from '/src/utils/speech.js';
 
 function renderTable(containerId, limit = 0) {
@@ -6,7 +6,7 @@ function renderTable(containerId, limit = 0) {
     if (!tbody) return;
 
     const fragment = document.createDocumentFragment();
-    const itemsToRender = limit > 0 ? familyExamples.slice(0, limit) : familyExamples;
+    const itemsToRender = limit > 0 ? examples.slice(0, limit) : examples;
 
     itemsToRender.forEach(item => {
         const row = document.createElement('tr');
@@ -23,7 +23,7 @@ function renderTable(containerId, limit = 0) {
                 </div>
             </td>
             <td class="px-6 py-4 text-center">
-                <span class="text-base text-gray-500 font-medium">${item.pron_pre || item.pron || '---'}</span>
+                <span class="text-base text-gray-500 font-medium">${item.pron || '---'}</span>
             </td>
             <td class="px-6 py-4 text-center bg-blue-50/30">
                 <span class="text-base font-bold text-blue-600">${item.spanish || '---'}</span>
