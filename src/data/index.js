@@ -2,18 +2,18 @@ import { regularVerbs} from './regularVerbs.js';
 import { irregularVerbs } from './irregularVerbs.js';
 import { connectives } from './connectives.js';
 import { adjectives } from './adjectives.js';
-import { family } from './family.js';
+import { familyData } from './family.js';
 import { places } from './places.js';
 import { food } from './food.js';
 import { jobs } from './jobs.js';
 import { clothes } from './clothes.js';
 import { vegetables } from './vegetables.js';
-import { regularExamples, irregularExamples, getExamples, familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples } from './examples.js';
+import { regularExamples, irregularExamples, getExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples } from './examples.js';
 import { adverbsExamples } from './adverbs.js';
 import { commonWordsExamples } from './commonWords.js';
 
-export { family, places, food, jobs, clothes, vegetables };
-export { familyExamples, placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples };
+export { familyData, places, food, jobs, clothes, vegetables };
+export { placesExamples, foodExamples, jobsExamples, clothesExamples, foodFruitsExamples, foodVegetablesExamples, foodMeatsExamples, foodPoultryExamples, foodSeafoodExamples, foodFastFoodExamples };
 export { adverbsExamples, commonWordsExamples };
 
 export const getVerbsByCategory = (category) => {
@@ -46,7 +46,7 @@ export const getWordsByCategory = (category) => {
     case 'adj':
       return adjectives;
     case 'family':
-      return familyExamples;
+      return familyData;
     case 'lugares':
       return placesExamples;
     case 'comida':
