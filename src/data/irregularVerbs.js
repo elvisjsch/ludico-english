@@ -61,6 +61,7 @@ export const irregularVerbs = [
   { english: "Leave", pron: "/líiv/", third_person: "Leaves", pron_thp: "/líivs/", gerundio: "Leaving", pron_ger: "/líiving/", past: "Left", pron_past: "/léft/", spanish: "partir / dejar" },
   { english: "Lend", pron: "/lend/", third_person: "Lends", pron_thp: "/lends/", gerundio: "Lending", pron_ger: "/lénding/", past: "Lent", pron_past: "/lent/", spanish: "prestar" },
   { english: "Let", pron: "/let/", third_person: "Lets", pron_thp: "/lets/", gerundio: "Letting", pron_ger: "/léting/", past: "Let", pron_past: "/let/", spanish: "dejar / permitir" },
+  { english: "Lose", pron: "/lús/", third_person: "Loses", pron_thp: "/lúsiz/", gerundio: "Losing", pron_ger: "/lúsin/", past: "Lost", pron_past: "/lost/", spanish: "perder" },
   { english: "Lie", pron: "/lái/", third_person: "Lies", pron_thp: "/láis/", gerundio: "Lying", pron_ger: "/láying/", past: "Lay", pron_past: "/léi/", spanish: "mentir / tumbarse" },
   { english: "Light", pron: "/láit/", third_person: "Lights", pron_thp: "/láits/", gerundio: "Lighting", pron_ger: "/láiting/", past: "Lit", pron_past: "/lit/", spanish: "encender" },
   { english: "Make", pron: "/méik/", third_person: "Makes", pron_thp: "/méiks/", gerundio: "Making", pron_ger: "/méiking/", past: "Made", pron_past: "/méid/", spanish: "hacer" },

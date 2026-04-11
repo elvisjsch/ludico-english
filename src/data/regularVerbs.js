@@ -216,6 +216,7 @@ export const regularVerbs = [
   {"english":"Load","pron":"/lóud/","third_person":"Loads","pron_thp":"/lóuds/","gerundio":"Loading","pron_ger":"/lóudin/","past":"Loaded","pron_past":"/lóudid/","spanish":"cargar"},
   {"english":"Lock","pron":"/lók/","third_person":"Locks","pron_thp":"/lóks/","gerundio":"Locking","pron_ger":"/lókin/","past":"Locked","pron_past":"/lókt/","spanish":"cerrar con llave"},
   {"english":"Look","pron":"/lúk/","third_person":"Looks","pron_thp":"/lúks/","gerundio":"Looking","pron_ger":"/lúkin/","past":"Looked","pron_past":"/lúkt/","spanish":"mirar"},
+  {"english":"Love","pron":"/láv/","third_person":"Looks","pron_thp":"/lúks/","gerundio":"Looking","pron_ger":"/lúkin/","past":"Looked","pron_past":"/lúkt/","spanish":"mirar"},
   {"english":"Love","pron":"/láv/","third_person":"Loves","pron_thp":"/lávs/","gerundio":"Loving","pron_ger":"/lávin/","past":"Loved","pron_past":"/lávid/","spanish":"amar"},
   {"english":"Manage","pron":"/mánich/","third_person":"Manages","pron_thp":"/mániches/","gerundio":"Managing","pron_ger":"/mánichin/","past":"Managed","pron_past":"/mánichid/","spanish":"administrar, gestionar"},
   {"english":"March","pron":"/márch/","third_person":"Marches","pron_thp":"/márches/","gerundio":"Marching","pron_ger":"/márchin/","past":"Marched","pron_past":"/márcht/","spanish":"marchar"},
