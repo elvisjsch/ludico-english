@@ -406,13 +406,3 @@ export const regularVerbs = [
   {"english":"Yawn","pron":"/ión/","third_person":"Yawns","pron_thp":"/ións/","gerundio":"Yawning","pron_ger":"/iónin/","past":"Yawned","pron_past":"/iónid/","spanish":"bostezar"},
   {"english":"Yell","pron":"/yél/","third_person":"Yells","pron_thp":"/yéls/","gerundio":"Yelling","pron_ger":"/yélin/","past":"Yelled","pron_past":"/yéld/","spanish":"gritar"}
 ];
-
-export const categories = {
-  reg: 'Regulares',
-  irreg: 'Irregulares', 
-  ambos: 'Ambos',
-  conect: 'Conectivos',
-  adj: 'Adjetivos',
-  profe: 'Profesiones',
-  other: 'Otros'
-};

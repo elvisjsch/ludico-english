@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayIngles - Ropa</title>
+    <title>PlayIngles - Adverbios</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -28,8 +28,8 @@
                 <a href="/src/pages/lugares.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Lugares</a>
                 <a href="/src/pages/comida.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Comida</a>
                 <a href="/src/pages/ocupaciones.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ocupaciones</a>
-                <a href="/src/pages/ropa.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-white pb-1">Ropa</a>
-                <a href="/src/pages/adverbs.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Adverbios</a>
+                <a href="/src/pages/ropa.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ropa</a>
+                <a href="/src/pages/adverbs.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-white pb-1">Adverbios</a>
                 <a href="/src/pages/commonWords.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Palabras Comunes</a>
             </div>
         </div>
@@ -39,7 +39,7 @@
         <section class="bg-white rounded-3xl shadow-2xl overflow-hidden border border-gray-100">
             <div class="bg-gray-50/50 px-8 py-5 border-b border-gray-100 flex justify-between items-center">
                 <div class="flex items-center gap-4">
-                    <h2 class="text-xl font-black text-gray-700 uppercase tracking-widest">Ropa</h2>
+                    <h2 class="text-xl font-black text-gray-700 uppercase tracking-widest">Adverbios de Tiempo</h2>
                     <div class="flex items-center gap-2">
                         <label class="text-xs font-bold text-gray-500 uppercase">Límite:</label>
                         <input type="number" id="wordLimit" min="1" placeholder="Todas" class="w-20 text-xs bg-white border border-gray-200 rounded-lg px-2 py-1 font-bold text-gray-600 focus:outline-none focus:ring-2 focus:ring-indigo-500">
@@ -70,14 +70,14 @@
     </footer>
 
     <script type="module">
-        import { clothesExamples } from '/src/data/examples.js';
+        import { adverbsExamples } from '/src/data/adverbs.js';
         import { speak } from '/src/utils/speech.js';
 
         function renderTable(limit = 0) {
             const tbody = document.getElementById('statsTableBody');
             const fragment = document.createDocumentFragment();
 
-            const itemsToRender = limit > 0 ? clothesExamples.slice(0, limit) : clothesExamples;
+            const itemsToRender = limit > 0 ? adverbsExamples.slice(0, limit) : adverbsExamples;
 
             itemsToRender.forEach(item => {
                 const row = document.createElement('tr');
