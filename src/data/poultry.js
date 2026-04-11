@@ -1,4 +1,4 @@
-export const foodPoultryData = [
+export const poultryData = [
   { english: "Chicken", pron: "/chicken/", spanish: "Pollo"},
   { english: "Whole chicken", pron: "/jol chiken/", spanish: "Pollo enero"},
   { english: "Boneless chicken", pron: "/boundless chiken/", spanish: "Pollo deshuesado"},
@@ -13,4 +13,4 @@ export const foodPoultryData = [
   { english: "Poultry", pron: "/poltri/", spanish: "Aves"}
 ];
 
-export const foodPoultryExamples = foodPoultryData;
+export const foodPoultryExamples = poultryData;

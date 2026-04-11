@@ -1,4 +1,4 @@
-export const foodVegetablesData = [
+export const vegetablesData = [
   { english: "Artichoke", pron: "/Artichok/", spanish: "Alcaucil, alcachofa"},
   { english: "Eggplant", pron: "/Eggplents/", spanish: "Berenjena"},
   { english: "Asparagus", pron: "/Asparragas/", spanish: "Espárrago"},
@@ -76,4 +76,4 @@ export const foodMeatsExamples = [
   { english: "Cold meat", pron: "/cold mit/", spanish: "Fiambres"}
 ];
 
-export const foodVegetablesExamples = foodVegetablesData;
+export const foodVegetablesExamples = vegetablesData;

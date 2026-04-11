@@ -1,4 +1,4 @@
-export const foodSeafoodData = [
+export const seafoodData = [
   { english: "Seafood", pron: "/sifud/", spanish: "Mariscos"},
   { english: "Fish", pron: "/fish/", spanish: "Pescado"},
   { english: "Filet", pron: "/filet/", spanish: "Filete"},
@@ -57,4 +57,4 @@ export const foodFastFoodExamples = [
   { english: "Desserts", pron: "/disert/", spanish: "Postres"}
 ];
 
-export const foodSeafoodExamples = foodSeafoodData;
+export const foodSeafoodExamples = seafoodData;
