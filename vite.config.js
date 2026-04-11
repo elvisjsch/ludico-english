@@ -13,7 +13,9 @@ export default defineConfig({
         lugares: './src/pages/lugares.html',
         comida: './src/pages/comida.html',
         ocupaciones: './src/pages/ocupaciones.html',
-        ropa: './src/pages/ropa.html'
+        ropa: './src/pages/ropa.html',
+        adverbs: './src/pages/adverbs.html',
+        commonWords: './src/pages/commonWords.html'
       }
     }
   },

@@ -1,6 +1,9 @@
 import { getVerbsByCategory, getWordsByCategory } from '../data/index.js';
 import { storage, shuffleArray, createResultRow, getRandomItem } from '../utils/index.js';
 import { updateCategoryStyles, activeClasses, inactiveClasses } from '../utils/helpers.js';
+import { adverbsData, commonWordsData } from '../data/index.js';
+
+adverbsData; commonWordsData;
 
 
 let gameState = {
