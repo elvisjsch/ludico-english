@@ -1,5 +1,5 @@
 import { getVerbsByCategory, getWordsByCategory } from '../data/index.js';
-import { storage, shuffleArray, createResultRow, getRandomItem } from '../utils/index.js';
+import { storage, shuffleArray, createResultRow, getRandomItem, speak } from '../utils/index.js';
 import { updateCategoryStyles, activeClasses, inactiveClasses } from '../utils/helpers.js';
 import { adverbsData, commonWordsData } from '../data/index.js';
 
@@ -151,6 +151,9 @@ function showAnswer(elements) {
   } else {
     elements.translation.textContent = gameState.currentWord.spanish;
   }
+
+  elements.translation.style.cursor = 'pointer';
+  elements.translation.onclick = () => speak(elements.translation.textContent);
 
   elements.pronunciation.textContent = gameState.currentWord.pron_pre || gameState.currentWord.pron || '';
   elements.areaEnser.classList.remove('hidden');
