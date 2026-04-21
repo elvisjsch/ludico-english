@@ -13,7 +13,7 @@ let gameState = {
   start: false,
   good: 0,
   bad: 0,
-  wordLimit: 20
+  wordLimit: 0
 };
 
 export function initFlashcards(elements) {
@@ -81,13 +81,13 @@ function setupEventListeners(elements) {
 
   // 1. Acciones simples (Agrupadas para lectura rápida)
   btnBegin.onclick = () => startGame(elements);
-  btnShow.onclick  = () => showAnswer(elements);
+  btnShow.onclick  = () => { if (gameState.start && gameState.wordsCopy.length > 0) showAnswer(elements); };
   btnNext.onclick  = () => loadQuestion(elements);
   btnReset.onclick = () => resetGame(elements);
 
-  // 2. Registro de resultados (Acierto/Fallo)
-  correctBtn.onclick = () => recordResult(true, elements);
-  wrongBtn.onclick   = () => recordResult(false, elements);
+  // 2. Registro de resultados (Acierto/Fallo) - solo si juego activo
+  correctBtn.onclick = () => { if (gameState.start && gameState.wordsCopy.length > 0) recordResult(true, elements); };
+  wrongBtn.onclick   = () => { if (gameState.start && gameState.wordsCopy.length > 0) recordResult(false, elements); };
 
   // 3. Selección de Categoría con actualización visual
   categoryButtons.forEach(btn => {
@@ -112,6 +112,8 @@ function setupKeyboardShortcuts(elements) {
   const { btnShow, correctBtn, wrongBtn } = elements;
 
   document.addEventListener('keydown', (e) => {
+    if (!gameState.start || gameState.wordsCopy.length === 0) return;
+
     const key = e.key.toLowerCase();
 
     if (key === 'm' && !btnShow.classList.contains('hidden')) {
