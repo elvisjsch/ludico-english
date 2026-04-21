@@ -20,6 +20,7 @@ export function initFlashcards(elements) {
   gameState.currentCategory = storage.getLastCategory();
   loadCategory(gameState.currentCategory, elements);
   setupEventListeners(elements);
+  setupKeyboardShortcuts(elements);
 }
 
 function updateSelectCategory(elements) {
@@ -105,6 +106,29 @@ function setupEventListeners(elements) {
   contCorrect.onclick   = () => filterResults(true, elements);
   contIncorrect.onclick = () => filterResults(false, elements);
   allResult.onclick = () => showAllResult(elements);
+}
+
+function setupKeyboardShortcuts(elements) {
+  const { btnShow, correctBtn, wrongBtn } = elements;
+
+  document.addEventListener('keydown', (e) => {
+    const key = e.key.toLowerCase();
+
+    if (key === 'm' && !btnShow.classList.contains('hidden')) {
+      e.preventDefault();
+      btnShow.click();
+    }
+
+    if (key === 'b' && !correctBtn.classList.contains('hidden')) {
+      e.preventDefault();
+      correctBtn.click();
+    }
+
+    if (key === 'x' && !wrongBtn.classList.contains('hidden')) {
+      e.preventDefault();
+      wrongBtn.click();
+    }
+  });
 }
 
 
