@@ -28,7 +28,7 @@ export const getVerbsByCategory = (category) => {
     case 'conect':
       return connectives;
     case 'adj':
-      return adjectives;
+      return adjectivesData;
     default:
       return regularVerbs;
   }
