@@ -15,7 +15,8 @@ export default defineConfig({
         ocupaciones: './src/pages/ocupaciones.html',
         ropa: './src/pages/ropa.html',
         adverbs: './src/pages/adverbs.html',
-        commonWords: './src/pages/commonWords.html'
+        commonWords: './src/pages/commonWords.html',
+        juego2: './src/pages/juego2.html'
       }
     }
   },

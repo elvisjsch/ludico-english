@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PlayIngles - Juego Personalizado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/src/styles/main.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .custom-scrollbar::-webkit-scrollbar { height: 4px; width: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+
+<body class="bg-slate-50 min-h-screen flex flex-col text-slate-900 font-sans">
+
+    <header class="bg-white py-6 border-b border-slate-200 shadow-sm">
+        <h1 class="text-3xl font-extrabold text-center bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-violet-600 tracking-tight uppercase">
+            PlayIngles
+        </h1>
+    </header>
+
+    <nav class="bg-indigo-600 shadow-lg sticky top-0 z-50">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="flex justify-center space-x-6 py-3 flex-wrap">
+                <a href="/index.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Principal</a>
+                <a href="verbos.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Verbos</a>
+                <a href="familia.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Familia</a>
+                <a href="lugares.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Lugares</a>
+                <a href="comida.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Comida</a>
+                <a href="ocupaciones.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ocupaciones</a>
+                <a href="ropa.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Ropa</a>
+                <a href="adverbs.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Adverbios</a>
+                <a href="commonWords.html" class="text-indigo-100 hover:text-white text-sm font-semibold transition-all border-b-2 border-transparent hover:border-white pb-1">Palabras Comunes</a>
+                <a href="juego2.html" class="text-white text-sm font-semibold transition-all border-b-2 border-white pb-1">Juego2</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center p-4 md:p-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full max-w-5xl">
+
+            <div id="setupPanel" class="lg:col-span-7 bg-white rounded-[2rem] shadow-xl shadow-slate-200/60 p-6 border border-slate-100 flex flex-col items-center">
+                <h2 class="text-xl font-black text-slate-800 mb-4">Ingresa palabras en inglés</h2>
+                <p class="text-sm text-slate-500 mb-3">Ingresa las palabras en inglés (una por línea)</p>
+                
+                <div class="w-full mb-4">
+                    <label class="text-xs font-bold text-slate-500 uppercase">Categoría:</label>
+                    <select id="categorySelect" class="w-full mt-1 p-3 bg-slate-50 border border-slate-200 rounded-xl text-sm font-bold focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <option value="reg">Regulares</option>
+                        <option value="irreg">Irregulares</option>
+                        <option value="ambos">Ambos</option>
+                        <option value="conect">Conectivos</option>
+                        <option value="adj">Adjetivos</option>
+                        <option value="family">Familia</option>
+                        <option value="lugares">Lugares</option>
+                        <option value="comida">Comida</option>
+                        <option value="ocupaciones">Ocupaciones</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="adverbs">Adverbios</option>
+                        <option value="commonWords">Palabras Comunes</option>
+                    </select>
+                </div>
+                
+                <textarea id="customWordsInput" class="w-full h-48 p-4 bg-slate-50 border border-slate-200 rounded-xl text-sm font-mono focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="house&#10;dog&#10;cat&#10;water&#10;book"></textarea>
+                <button id="btnStartCustom" class="mt-4 bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-6 rounded-xl shadow-lg transition-all active:scale-[0.97]">
+                    Iniciar Juego
+                </button>
+            </div>
+
+            <div id="gamePanel" class="lg:col-span-7 bg-white rounded-[2rem] shadow-xl shadow-slate-200/60 p-6 border border-slate-100 flex flex-col items-center relative overflow-hidden hidden">
+                
+                <div class="flex items-center gap-3 mb-6 bg-slate-50 p-1.5 rounded-xl border border-slate-100">
+                    <label class="flex items-center cursor-pointer group">
+                        <input type="radio" name="opcion" class="sr-only peer" value="es" checked>
+                        <div class="px-4 py-1.5 rounded-lg peer-checked:bg-indigo-600 peer-checked:text-white text-slate-500 text-sm font-bold transition-all">
+                            Español
+                        </div>
+                    </label>
+                    <label class="flex items-center cursor-pointer group">
+                        <input type="radio" name="opcion" class="sr-only peer" value="en">
+                        <div class="px-4 py-1.5 rounded-lg peer-checked:bg-indigo-600 peer-checked:text-white text-slate-500 text-sm font-bold transition-all">
+                            Inglés
+                        </div>
+                    </label>
+                </div>
+
+                <div class="bg-indigo-50 w-16 h-16 flex items-center justify-center rounded-2xl mb-4 shadow-inner">
+                    <span class="text-3xl">🎮</span>
+                </div>
+
+                <h2 class="text-slate-400 text-[10px] font-black uppercase tracking-[0.2em] mb-1">Flashcards</h2>
+                
+                <div class="min-h-[100px] flex items-center justify-center w-full px-4">
+                    <p id="areaText" class="text-2xl md:text-3xl font-extrabold text-slate-800 text-center leading-tight">
+                        ¿Empezamos?
+                    </p>
+                </div>
+
+                <div id="areaEnser" class="hidden w-full max-w-xs mt-4 p-4 bg-gradient-to-br from-indigo-50 to-slate-50 rounded-2xl border border-indigo-100 text-center transform transition-all">
+                    <p id="translation" class="text-2xl font-black text-indigo-600 mb-1"></p>
+                    <p id="pronunciation" class="text-sm text-slate-400 italic font-medium tracking-wide"></p>
+                </div>
+
+                <div id="contenerButtonPlay" class="w-full max-w-xs mt-6 space-y-3">
+                    <button id="btnBegin" class="w-full bg-slate-900 hover:bg-indigo-600 text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-all active:scale-[0.97] flex items-center justify-center gap-3 group text-sm">
+                        <span>¡JUGAR AHORA!</span>
+                        <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+                        </svg>
+                    </button>
+
+                    <button id="btnShow" class="hidden w-full bg-slate-800 hover:bg-slate-700 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all active:scale-[0.97] text-sm">
+                        Mostrar Respuesta
+                    </button>
+
+                    <button id="btnNext" class="hidden w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all active:scale-[0.97] text-sm">
+                        Siguiente Palabra
+                    </button>
+
+                    <div id="evaluationButtons" class="flex gap-3 w-full animate-in fade-in zoom-in duration-300">
+                        <button id="wrongBtn" class="bg-rose-500 hover:bg-rose-600 text-white font-bold py-3 px-4 rounded-xl flex-1 shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span class="text-lg">✕</span> <span class="text-xs uppercase">Mal</span>
+                        </button>
+                        <button id="correctBtn" class="bg-emerald-500 hover:bg-emerald-600 text-white font-bold py-3 px-4 rounded-xl flex-1 shadow-md transition-all active:scale-95 flex items-center justify-center gap-2">
+                            <span class="text-lg">✓</span> <span class="text-xs uppercase">Bien</span>
+                        </button>
+                    </div>
+
+                    <button id="btnReset" class="hidden w-full bg-amber-500 hover:bg-amber-400 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all active:scale-[0.97] text-sm">
+                        Reiniciar el Juego
+                    </button>
+
+                    <button id="btnNewList" class="hidden w-full bg-slate-600 hover:bg-slate-500 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all active:scale-[0.97] text-sm">
+                        Nueva Lista
+                    </button>
+                </div>
+
+                <div class="w-full mt-8 pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div id="containerCheckMode" class="flex items-center gap-3">
+                        <span class="text-[10px] font-bold uppercase text-slate-400 tracking-widest">Modo Evaluación</span>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input id="checkMode" type="checkbox" class="sr-only peer" checked>
+                            <div class="w-9 h-5 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-indigo-600"></div>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div id="table-contener" class="lg:col-span-5 bg-white rounded-[2rem] shadow-lg shadow-slate-200/50 p-6 border border-slate-100 flex flex-col hidden">
+                <div class="flex flex-col items-center justify-between mb-6">
+                    <div id="allResult" class="flex items-center gap-2">
+                        <div class="p-1.5 bg-gray-100 rounded-lg text-lg">🧾</div>
+                        <h2 class="text-lg font-black text-slate-800 uppercase tracking-tight">Progreso</h2>
+                    </div>
+                    <div class="flex gap-2">
+                        <div class="px-2.5 py-1 bg-emerald-50 rounded-lg border border-emerald-100">
+                            <span id="contCorrect" class="text-emerald-600 font-bold text-xs cursor-pointer hover:text-emerald-700">✓ Correctas: 0</span>
+                        </div>
+                        <div class="px-2.5 py-1 bg-rose-50 rounded-lg border border-rose-100">
+                            <span id="contIncorrect" class="text-rose-600 font-bold text-xs cursor-pointer hover:text-rose-700">✕ Incorrectas: 0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overflow-hidden rounded-2xl border border-slate-100 flex-grow flex flex-col bg-slate-50/50">
+                    <table class="w-full text-left border-collapse">
+                        <thead class="bg-white border-b border-slate-100">
+                            <tr>
+                                <th class="px-5 py-3 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em]">Palabra</th>
+                                <th class="px-5 py-3 text-[9px] font-black text-slate-400 uppercase tracking-[0.2em] text-center">Estado</th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="overflow-y-auto max-h-[380px] custom-scrollbar">
+                        <table class="w-full text-left border-collapse">
+                            <tbody id="statsTableBody" class="divide-y divide-slate-100">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="py-6 text-center">
+        <p class="text-slate-400 text-xs font-medium">
+            &copy; 2026 PlayIngles • Aprende Inglés con estilo
+        </p>
+    </footer>
+
+    <script type="module">
+        import { shuffleArray, createResultRow, getRandomItem, speak } from '../utils/index.js';
+        import { getWordsByCategory } from '../data/index.js';
+
+        let customWords = [];
+        let gameState = {
+            wordsCopy: [],
+            currentWord: null,
+            start: false,
+            good: 0,
+            bad: 0
+        };
+
+        const elements = {};
+
+        function init() {
+            elements.setupPanel = document.getElementById('setupPanel');
+            elements.gamePanel = document.getElementById('gamePanel');
+            elements.tableContener = document.getElementById('table-contener');
+            elements.btnStartCustom = document.getElementById('btnStartCustom');
+            elements.customWordsInput = document.getElementById('customWordsInput');
+            elements.categorySelect = document.getElementById('categorySelect');
+            
+            elements.btnBegin = document.getElementById('btnBegin');
+            elements.btnShow = document.getElementById('btnShow');
+            elements.btnNext = document.getElementById('btnNext');
+            elements.btnReset = document.getElementById('btnReset');
+            elements.btnNewList = document.getElementById('btnNewList');
+            elements.areaText = document.getElementById('areaText');
+            elements.areaEnser = document.getElementById('areaEnser');
+            elements.evaluationButtons = document.getElementById('evaluationButtons');
+            elements.translation = document.getElementById('translation');
+            elements.pronunciation = document.getElementById('pronunciation');
+            elements.statsTableBody = document.getElementById('statsTableBody');
+            elements.contCorrect = document.getElementById('contCorrect');
+            elements.contIncorrect = document.getElementById('contIncorrect');
+            elements.correctBtn = document.getElementById('correctBtn');
+            elements.wrongBtn = document.getElementById('wrongBtn');
+            elements.allResult = document.getElementById('allResult');
+            elements.checkMode = document.getElementById('checkMode');
+
+            elements.btnStartCustom.onclick = startCustomGame;
+            elements.btnBegin.onclick = () => startGame();
+            elements.btnShow.onclick = () => showAnswer();
+            elements.btnNext.onclick = () => loadQuestion();
+            elements.btnReset.onclick = () => resetGame();
+            elements.btnNewList.onclick = () => showSetup();
+            elements.correctBtn.onclick = () => recordResult(true);
+            elements.wrongBtn.onclick = () => recordResult(false);
+            elements.contCorrect.onclick = () => filterResults(true);
+            elements.contIncorrect.onclick = () => filterResults(false);
+            elements.allResult.onclick = () => showAllResult();
+
+            document.addEventListener('keydown', handleKeyboard);
+        }
+
+        function parseWords(text, category) {
+            const inputWords = text.trim().split('\n').map(w => w.trim().toLowerCase()).filter(w => w);
+            const allWords = getWordsByCategory(category);
+            
+            const matchedWords = allWords.filter(word => 
+                inputWords.includes(word.english.toLowerCase())
+            );
+            
+            return matchedWords;
+        }
+
+        function startCustomGame() {
+            const text = elements.customWordsInput.value.trim();
+            if (!text) {
+                alert('Por favor ingresa algunas palabras');
+                return;
+            }
+            
+            const category = elements.categorySelect.value;
+            customWords = parseWords(text, category);
+            
+            if (customWords.length === 0) {
+                alert('No se encontraron palabras en esa categoría. Verifica las palabras ingresadas.');
+                return;
+            }
+            
+            elements.setupPanel.classList.add('hidden');
+            elements.gamePanel.classList.remove('hidden');
+            elements.tableContener.classList.remove('hidden');
+            resetGame();
+        }
+
+        function showSetup() {
+            gameState.start = false;
+            elements.gamePanel.classList.add('hidden');
+            elements.tableContener.classList.add('hidden');
+            elements.setupPanel.classList.remove('hidden');
+        }
+
+        function startGame() {
+            gameState.start = true;
+            gameState.wordsCopy = shuffleArray([...customWords]);
+            gameState.good = 0;
+            gameState.bad = 0;
+            
+            elements.btnBegin.classList.add('hidden');
+            elements.contCorrect.textContent = '✓ Correctas: 0';
+            elements.contIncorrect.textContent = '✕ Incorrectas: 0';
+            elements.statsTableBody.innerHTML = '';
+            
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            if (gameState.wordsCopy.length === 0) {
+                elements.areaText.textContent = '¡Completado! 🎉';
+                elements.btnShow.classList.add('hidden');
+                elements.btnNext.classList.add('hidden');
+                elements.evaluationButtons.classList.add('hidden');
+                elements.areaEnser.classList.add('hidden');
+                elements.btnReset.classList.remove('hidden');
+                elements.btnNewList.classList.remove('hidden');
+                return;
+            }
+
+            gameState.currentWord = getRandomItem(gameState.wordsCopy);
+            const selectedLang = document.querySelector('input[name="opcion"]:checked')?.value || 'es';
+
+            if (selectedLang === 'es') {
+                elements.areaText.textContent = `¿Cómo se dice "${gameState.currentWord.spanish}"?`;
+            } else {
+                elements.areaText.textContent = `¿Qué significa "${gameState.currentWord.english}" en inglés?`;
+            }
+
+            elements.areaEnser.classList.add('hidden');
+            elements.evaluationButtons.classList.add('hidden');
+            elements.btnNext.classList.add('hidden');
+            elements.btnShow.classList.remove('hidden');
+            elements.btnReset.classList.add('hidden');
+            elements.btnNewList.classList.add('hidden');
+        }
+
+        function showAnswer() {
+            const selectedLang = document.querySelector('input[name="opcion"]:checked')?.value || 'es';
+
+            if (selectedLang === 'es') {
+                elements.translation.textContent = gameState.currentWord.english;
+            } else {
+                elements.translation.textContent = gameState.currentWord.spanish;
+            }
+
+            elements.translation.style.cursor = 'pointer';
+            elements.translation.onclick = () => speak(elements.translation.textContent);
+
+            elements.pronunciation.textContent = gameState.currentWord.pron || '';
+            elements.areaEnser.classList.remove('hidden');
+            elements.btnShow.classList.add('hidden');
+
+            const isEvalMode = elements.checkMode?.checked;
+
+            if (isEvalMode) {
+                elements.evaluationButtons.classList.remove('hidden');
+            } else {
+                elements.btnNext.classList.remove('hidden');
+                gameState.wordsCopy = gameState.wordsCopy.filter(w => w !== gameState.currentWord);
+            }
+        }
+
+        function recordResult(isCorrect) {
+            if (isCorrect) {
+                gameState.good++;
+                elements.contCorrect.textContent = `✓ Correctas: ${gameState.good}`;
+            } else {
+                gameState.bad++;
+                elements.contIncorrect.textContent = `✕ Incorrectas: ${gameState.bad}`;
+            }
+
+            const row = createResultRow(gameState.currentWord, isCorrect);
+            elements.statsTableBody.prepend(row);
+
+            gameState.wordsCopy = gameState.wordsCopy.filter(w => w !== gameState.currentWord);
+            loadQuestion();
+        }
+
+        function resetGame() {
+            elements.btnBegin.classList.remove('hidden');
+            elements.areaText.textContent = '¿Empezamos?';
+            elements.areaEnser.classList.add('hidden');
+            elements.btnShow.classList.add('hidden');
+            elements.btnNext.classList.add('hidden');
+            elements.evaluationButtons.classList.add('hidden');
+            elements.btnReset.classList.add('hidden');
+            elements.btnNewList.classList.add('hidden');
+            gameState.start = false;
+            gameState.good = 0;
+            gameState.bad = 0;
+            elements.contCorrect.textContent = '✓ Correctas: 0';
+            elements.contIncorrect.textContent = '✕ Incorrectas: 0';
+            elements.statsTableBody.innerHTML = '';
+        }
+
+        function filterResults(showCorrect) {
+            const rows = Array.from(elements.statsTableBody.rows);
+            rows.forEach(row => {
+                const isCorrect = row.cells[1]?.textContent.trim() === '✓';
+                if (showCorrect) {
+                    row.classList.toggle('hidden', !isCorrect);
+                } else {
+                    row.classList.toggle('hidden', isCorrect);
+                }
+            });
+        }
+
+        function showAllResult() {
+            const rows = Array.from(elements.statsTableBody.rows);
+            rows.forEach(row => {
+                row.classList.remove('hidden');
+            });
+        }
+
+        function handleKeyboard(e) {
+            if (!gameState.start || gameState.wordsCopy.length === 0) return;
+            const key = e.key.toLowerCase();
+            if (key === 'm' && !elements.btnShow.classList.contains('hidden')) {
+                e.preventDefault();
+                showAnswer();
+            }
+            if (key === 'b' && !elements.correctBtn.classList.contains('hidden')) {
+                e.preventDefault();
+                recordResult(true);
+            }
+            if (key === 'x' && !elements.wrongBtn.classList.contains('hidden')) {
+                e.preventDefault();
+                recordResult(false);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+
+</html>
