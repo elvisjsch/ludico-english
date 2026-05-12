@@ -126,5 +126,7 @@ export const irregularVerbs = [
   { english: "Weave", pron: "/uíiv/", third_person: "Weaves", pron_thp: "/uíivs/", gerundio: "Weaving", pron_ger: "/uíiving/", past: "Wove", pron_past: "/uóuv/", spanish: "tejer / entrelazar" },
   { english: "Wet", pron: "/uét/", third_person: "Wets", pron_thp: "/uéts/", gerundio: "Wetting", pron_ger: "/uétting/", past: "Wet", pron_past: "/uét/", spanish: "mojar" },
   { english: "Win", pron: "/uín/", third_person: "Wins", pron_thp: "/uíns/", gerundio: "Winning", pron_ger: "/uínnin/", past: "Won", pron_past: "/uan/", spanish: "ganar" },
-  { english: "Write", pron: "/ráit/", third_person: "Writes", pron_thp: "/ráits/", gerundio: "Writing", pron_ger: "/ráiting/", past: "Wrote", pron_past: "/róut/", spanish: "escribir" }
+  { english: "Write", pron: "/ráit/", third_person: "Writes", pron_thp: "/ráits/", gerundio: "Writing", pron_ger: "/ráiting/", past: "Wrote", pron_past: "/róut/", spanish: "escribir" },
+  { english: "Bend", pron: "/bend/", third_person: "Bends", pron_thp: "/bends/", gerundio: "Bending", pron_ger: "/bénding/", past: "Bent", pron_past: "/bent/", spanish: "doblar" },
+  { english: "Burst", pron: "/berst/", third_person: "Bursts", pron_thp: "/bersts/", gerundio: "Bursting", pron_ger: "/bérsting/", past: "Burst", pron_past: "/berst/", spanish: "explotar" }
 ];
